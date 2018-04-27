@@ -1,3 +1,5 @@
+*/target/
+
 # Ignore everything inside .idea except of code styles
 .idea/
 !.idea/codeStyles/*
