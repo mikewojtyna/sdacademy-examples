@@ -1,16 +1,15 @@
-package pl.sdacademy.newclasses;
+package pl.sdacademy.loop.sum;
 
-public class ArraysTest {
-
+public class App {
 	public static void main(String[] args) {
-		// let's have some fun using arrays
-
+		// let's have some fun using loops
 		int[] intArray = new int[]{0, 1, 2};
 
-		// int sum = forISum(intArray);
+		// You can use any loop to calculate the sum - try it!
+		int sum = forISum(intArray);
 		// int sum = forEachSum(intArray);
 		// int sum = whileSum(intArray);
-		int sum = doWhileSum(intArray);
+		// int sum = doWhileSum(intArray);
 
 		System.out.println(sum);
 
@@ -53,5 +52,4 @@ public class ArraysTest {
 		}
 		return sum;
 	}
-
 }

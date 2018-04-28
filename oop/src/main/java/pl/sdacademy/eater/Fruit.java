@@ -1,4 +1,4 @@
-package pl.sdacademy.newclasses;
+package pl.sdacademy.eater;
 
 import java.util.Objects;
 
@@ -11,7 +11,7 @@ public class Fruit {
 
 	@Override
 	public String toString() {
-		return "Fruit{" + "name='" + name + '\'' + '}';
+		return name;
 	}
 
 	@Override

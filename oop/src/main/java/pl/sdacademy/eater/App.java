@@ -1,6 +1,6 @@
-package pl.sdacademy.newclasses;
+package pl.sdacademy.eater;
 
-public class Test {
+public class App {
 	public static void main(String[] args) {
 		ApplicationBootrapper.start();
 	}

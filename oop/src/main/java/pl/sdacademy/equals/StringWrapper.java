@@ -1,6 +1,4 @@
-package pl.sdacademy.newclasses;
-
-import java.util.Objects;
+package pl.sdacademy.equals;
 
 public class StringWrapper {
 	private String value;
@@ -9,8 +7,7 @@ public class StringWrapper {
 		this.value = value;
 	}
 
-
-	@Override
+/*	@Override
 	public boolean equals(Object o) {
 		if (this == o) {
 			return true;
@@ -26,5 +23,5 @@ public class StringWrapper {
 	public int hashCode() {
 
 		return Objects.hash(value);
-	}
+	}*/
 }

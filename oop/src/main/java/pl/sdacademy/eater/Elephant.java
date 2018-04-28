@@ -1,7 +1,6 @@
-package pl.sdacademy.newclasses;
+package pl.sdacademy.eater;
 
 public class Elephant {
-
 	private Fruit[] edibleFruits;
 
 	public Elephant(Fruit[] edibleFruits) {
@@ -20,14 +19,16 @@ public class Elephant {
 	}
 
 	private boolean isEdible(Fruit fruit) {
-/*		for (int i = 0; i < edibleFruits.length; i++) {
+		// You can implement this using classic for loop
+		for (int i = 0; i < edibleFruits.length; i++) {
 			Fruit currentFruit = edibleFruits[i];
 
 			if (currentFruit.equals(fruit)) {
 				return true;
 			}
-		}*/
+		}
 
+		// ... Or foreach loop
 		for (Fruit currentFruit : edibleFruits) {
 			if (currentFruit.equals(fruit)) {
 				return true;
@@ -36,5 +37,4 @@ public class Elephant {
 
 		return false;
 	}
-
 }

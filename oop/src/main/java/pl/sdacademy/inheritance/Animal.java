@@ -1,4 +1,4 @@
-package pl.sdacademy.examples;
+package pl.sdacademy.inheritance;
 
 public class Animal {
 	protected final String name;
@@ -8,6 +8,7 @@ public class Animal {
 	}
 
 	public void eat() {
+		System.out.println("omnononom");
 	}
 
 	void move() {

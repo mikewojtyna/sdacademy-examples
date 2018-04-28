@@ -1,4 +1,4 @@
-package pl.sdacademy.examples;
+package pl.sdacademy.inheritance;
 
 public class Elephant extends Animal {
 	public Elephant(String name) {
