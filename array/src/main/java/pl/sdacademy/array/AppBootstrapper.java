@@ -1,7 +1,7 @@
 package pl.sdacademy.array;
 
-public class AppBootstrapper {
-	public static void start() {
+class AppBootstrapper {
+	static void start() {
 		// we can init 2d array using {} brackets
 		String[][] table = new String[][]{
 			// first row
