@@ -10,6 +10,7 @@
 		<module>oop</module>
 		<module>loop</module>
 		<module>array</module>
+		<module>type</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
