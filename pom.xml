@@ -9,6 +9,7 @@
 		<module>hello-world</module>
 		<module>oop</module>
 		<module>loop</module>
+		<module>array</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
