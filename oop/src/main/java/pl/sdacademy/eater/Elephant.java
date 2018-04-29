@@ -29,11 +29,11 @@ public class Elephant {
 		}
 
 		// ... Or foreach loop
-		for (Fruit currentFruit : edibleFruits) {
+/*		for (Fruit currentFruit : edibleFruits) {
 			if (currentFruit.equals(fruit)) {
 				return true;
 			}
-		}
+		}*/
 
 		return false;
 	}
