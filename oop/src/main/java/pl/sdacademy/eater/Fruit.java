@@ -2,10 +2,10 @@ package pl.sdacademy.eater;
 
 import java.util.Objects;
 
-public class Fruit {
-	private String name;
+class Fruit {
+	private final String name;
 
-	public Fruit(String name) {
+	Fruit(String name) {
 		this.name = name;
 	}
 

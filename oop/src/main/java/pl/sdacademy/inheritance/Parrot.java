@@ -1,7 +1,7 @@
 package pl.sdacademy.inheritance;
 
-public class Parrot extends Animal {
-	private String color;
+class Parrot extends Animal {
+	private final String color;
 
 	public Parrot(String name, String color) {
 		super(name);

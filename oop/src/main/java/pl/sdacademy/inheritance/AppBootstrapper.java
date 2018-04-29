@@ -1,6 +1,6 @@
 package pl.sdacademy.inheritance;
 
-public class AppBootstrapper {
+class AppBootstrapper {
 	public static void start() {
 
 		// create an elephant called Babar and tell it to move and eat

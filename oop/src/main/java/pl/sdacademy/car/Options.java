@@ -6,7 +6,7 @@ package pl.sdacademy.car;
 // equipment.
 class Options {
 	private final Navigation navigation;
-	private AirConditioner airConditioner;
+	private final AirConditioner airConditioner;
 	private Airbag airbag;
 
 	// Note this constructor is private! It's here only to be used by

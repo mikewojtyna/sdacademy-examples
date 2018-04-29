@@ -1,7 +1,7 @@
 package pl.sdacademy.eater;
 
-public class ApplicationBootrapper {
-	public static void start() {
+class ApplicationBootrapper {
+	static void start() {
 		Fruit[] edibleFruits = new Fruit[]{fruit("Orange"), fruit
 			("Apple"), fruit("Banana")};
 		Elephant elephant = new Elephant(edibleFruits);

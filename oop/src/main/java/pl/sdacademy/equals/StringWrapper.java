@@ -1,9 +1,9 @@
 package pl.sdacademy.equals;
 
-public class StringWrapper {
-	private String value;
+class StringWrapper {
+	private final String value;
 
-	public StringWrapper(String value) {
+	StringWrapper(String value) {
 		this.value = value;
 	}
 

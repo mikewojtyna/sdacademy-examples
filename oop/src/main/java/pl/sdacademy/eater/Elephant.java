@@ -1,13 +1,13 @@
 package pl.sdacademy.eater;
 
-public class Elephant {
-	private Fruit[] edibleFruits;
+class Elephant {
+	private final Fruit[] edibleFruits;
 
-	public Elephant(Fruit[] edibleFruits) {
+	Elephant(Fruit[] edibleFruits) {
 		this.edibleFruits = edibleFruits;
 	}
 
-	public void eat(Fruit fruit) {
+	void eat(Fruit fruit) {
 		if (isEdible(fruit)) {
 			System.out.println("Elephant ate the fruit named: " +
 				fruit);

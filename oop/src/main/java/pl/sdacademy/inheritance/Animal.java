@@ -1,13 +1,13 @@
 package pl.sdacademy.inheritance;
 
-public class Animal {
+class Animal {
 	protected final String name;
 
-	public Animal(String name) {
+	Animal(String name) {
 		this.name = name;
 	}
 
-	public void eat() {
+	void eat() {
 		System.out.println("omnononom");
 	}
 

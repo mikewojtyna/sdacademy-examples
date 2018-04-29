@@ -1,7 +1,6 @@
 package pl.sdacademy.type.precision;
 
 class AppBootstrapper {
-
 	static void start() {
 		double division = 1 / 3 * 3.0; // this will return 0.0 - why?
 		System.out.println("1 / 3 * 3.0 = " + division);
