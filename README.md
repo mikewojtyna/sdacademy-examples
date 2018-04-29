@@ -14,4 +14,7 @@ Some loop and array examples
 
 ##### oop
 Object-oriented programming examples including inheritance, interactions and 
-message passing between objects. Composition is also included.
+message passing between objects. Composition is also included (the car package).
+
+##### array
+Array examples (including 2D arrays).
