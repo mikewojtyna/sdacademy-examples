@@ -4,13 +4,13 @@ import java.text.MessageFormat;
 
 public class ArrayAddElementTest {
 	/**
-	 * Creates a new array1d containing all {@code source} elements
+	 * Creates a new array containing all {@code source} elements
 	 * followed by {@code newElements}.
 	 *
-	 * @param source      a source array1d
+	 * @param source      a source array
 	 * @param newElements any number of new elements to "add" to the
-	 *                    {@code source} array1d
-	 * @return the new array1d containing all {@code source} elements
+	 *                    {@code source} array
+	 * @return the new array containing all {@code source} elements
 	 * followed by {@code newElements}
 	 */
 	private static String[] addElements(String[] source, String...
