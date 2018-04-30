@@ -1,8 +1,8 @@
-package pl.sdacademy.array2d;
+package pl.sdacademy.array.array2d;
 
 class AppBootstrapper {
 	static void start() {
-		// we can init 2d array using {} brackets
+		// we can init 2d array1d using {} brackets
 		String[][] table = new String[][]{
 			// first row
 			{"A", "B"},
@@ -16,10 +16,11 @@ class AppBootstrapper {
 		printCell(table, 1, 0); // prints "C" cell
 		printCell(table, 1, 1); // prints "D" cell
 
-		// we can also init 2d array "dynamically" - remember about
+		// we can also init 2d array1d "dynamically" - remember about
 		// size
 		String[][] table2 = new String[2][2]; // this line only
-		// initializes memory for 2x2 array - elements are not set yet
+		// initializes memory for 2x2 array1d - elements are not set
+		// yet
 		// set cell value at row 0 and column 0
 		table2[0][0] = "E";
 		// set cell value at row 0 and column 1
@@ -41,7 +42,7 @@ class AppBootstrapper {
 		// for over all table cells - the result will be the same as
 		// printing table cells manually using previous code - this
 		// way we can print all elements writing printCell just once
-		// for any 2d array of any length
+		// for any 2d array1d of any length
 		printAllCells(table);
 		System.out.println("print table2 cells using for loop");
 		printAllCells(table2);

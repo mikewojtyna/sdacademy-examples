@@ -1,4 +1,4 @@
-package pl.sdacademy.array;
+package pl.sdacademy.array.array1d;
 
 class AppBootstrapper {
 	static void start() {
