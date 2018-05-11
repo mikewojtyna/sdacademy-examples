@@ -6,11 +6,20 @@
 	<artifactId>sdacademy-examples</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<modules>
-		<module>hello-world</module>
-		<module>oop</module>
-		<module>loop</module>
-		<module>array</module>
-		<module>type</module>
+		<module>01_hello-world</module>
+		<module>02_type</module>
+		<module>03_array</module>
+		<module>04_loop</module>
+		<module>05_oop</module>
+		<module>06_klasa_podstawa</module>
+		<module>07_enum</module>
+		<module>08_dziedziczenie</module>
+		<module>09_klasy_abstrakcyjne</module>
+		<module>10_przeciazanie_metod</module>
+		<module>11_interfejsy</module>
+		<module>12_polimorfizm</module>
+		<module>13_kompozycja</module>
+		<module>14_wyjątki</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
