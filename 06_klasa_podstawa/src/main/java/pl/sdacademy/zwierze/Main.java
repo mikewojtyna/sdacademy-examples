@@ -1,4 +1,4 @@
-package pl.sdacademy;
+package pl.sdacademy.zwierze;
 
 public class Main {
     public static void main(String[] args) {

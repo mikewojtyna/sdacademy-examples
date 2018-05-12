@@ -20,6 +20,12 @@
 		<module>12_polimorfizm</module>
 		<module>13_kompozycja</module>
 		<module>14_wyjątki</module>
+		<module>15_adnotacje</module>
+		<module>16_string</module>
+		<module>17_data_czas</module>
+		<module>generics</module>
+		<module>18_typy_generyczne</module>
+		<module>19_kolekcje</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
@@ -77,6 +83,12 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>${commons-lang3.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
