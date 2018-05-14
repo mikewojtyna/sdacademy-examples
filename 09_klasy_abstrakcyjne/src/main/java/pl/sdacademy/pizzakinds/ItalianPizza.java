@@ -12,11 +12,5 @@ public class ItalianPizza extends Pizza {
         this.zioła = zioła;
     }
 
-    @Override
-    public void opiszSie() {
-        System.out.println("Pizza włoska o rozmiarze "
-            + getRozmiar()
-            + " ma " + getIleSera() + " sera, a dodatkowo ser "
-            + dodatkowySer + " i " + zioła);
-    }
+
 }

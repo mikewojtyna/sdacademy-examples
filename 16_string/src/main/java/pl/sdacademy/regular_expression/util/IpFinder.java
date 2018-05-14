@@ -7,7 +7,6 @@ public class IpFinder {
 
     Pattern ipPattern = Pattern.compile("\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}");
 
-
     public boolean hasIp(String text) {
         Matcher timeMatcher = ipPattern.matcher(text);
         return timeMatcher.find();

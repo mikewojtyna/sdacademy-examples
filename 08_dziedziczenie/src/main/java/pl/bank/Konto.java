@@ -2,7 +2,7 @@ package pl.bank;
 
 public class Konto {
 
-	protected int stanKonta;
+	private int stanKonta;
 
 	public Konto(int stanKonta) {
 		this.stanKonta = stanKonta;

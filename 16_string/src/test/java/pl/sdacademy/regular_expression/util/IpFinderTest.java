@@ -30,6 +30,7 @@ public class IpFinderTest {
 		assertTrue(ipFinder.hasIp(TEST_TEXT2)); //j.w.
 		assertFalse(ipFinder.hasIp(TEST_BAD_TEXT1));//asercja jest spełniona jeśli metoda hasIp zwróci fałsz dla argumentu TEST_BAD_TEXT1
 		assertFalse(ipFinder.hasIp(TEST_BAD_TEXT2)); //j.w.
+		assertFalse(true);
 
 	}
 
@@ -37,9 +38,13 @@ public class IpFinderTest {
 	public void getIp() throws Exception {
 		assertEquals(ipFinder.getIp(TEST_TEXT1), TEST_IP1); //asercja jest spełniona, jeśli jeśli to co zwróci metoda getIp dla napisu TEST_TEXT1 jest takie samo jak TEST_IP1
 		assertEquals(ipFinder.getIp(TEST_TEXT2), TEST_IP2); //j. w.
-
 		assertNull(ipFinder.getIp(TEST_BAD_TEXT1)); //asercja jest spełniona, jeśli to co zwróci metoda getIp dla napisu TEST_BAD_TEXT1 jest nullem
 		assertNull(ipFinder.getIp(TEST_BAD_TEXT2)); //j. w.
 
+	}
+
+	@Test
+	public void getIpAndHasIp() throws Exception {
+		assertTrue(ipFinder.getIp(TEST_TEXT1) != null && ipFinder.hasIp(TEST_TEXT1));
 	}
 }

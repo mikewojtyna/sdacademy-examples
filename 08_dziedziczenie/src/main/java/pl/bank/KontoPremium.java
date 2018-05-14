@@ -11,7 +11,7 @@ public class KontoPremium extends Konto {
 
 	@Override
 	public void pobierzPieniadze(int ilePobrac) {
-		if((stanKonta + debet) - ilePobrac > 0) {
+		if((this.getStanKonta() + debet) - ilePobrac > 0) {
 			this.setStanKonta(this.getStanKonta() - ilePobrac);
 			System.out.println("Pobrano " + ilePobrac + ", stan konta: " + getStanKonta());
 		} else {

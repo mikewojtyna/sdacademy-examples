@@ -10,7 +10,7 @@ public class User {
     @MyFieldAnnotation(isInDatabase = true)
     private String name;
 
-    @MyFieldAnnotation(isInDatabase = true)
+    @MyFieldAnnotation
     private String lastname;
 
     @MyFieldAnnotation(isInDatabase = false)

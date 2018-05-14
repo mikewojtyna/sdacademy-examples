@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 public class Main {
     public static void main(String[] args) {
         Produkt jablka = new Produkt("Jabłka", "12/07/2017");
-        Produkt sliwki = new Produkt("śliwki", "20/08/2017");
+        Produkt sliwki = new Produkt("śliwki", "20-08-2018");
         SprawdzaczWaznosci.sprawdzWaznosc(jablka);
         SprawdzaczWaznosci.sprawdzWaznosc(sliwki);
         LocalDate teraz = LocalDate.now();

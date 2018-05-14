@@ -1,8 +1,5 @@
 package pl.sdacademy;
 
-/**
- * Created by pwkmi on 10.07.2017.
- */
 public class StringTest2 {
     public static void main(String[] args) {
         int counter = 0;
