@@ -92,11 +92,46 @@ number1 = number2; // number2 jest zmienną, więc można ją przypisać
 number1 = int; // źle! nazwy typu nie można przypisać zmiennej
 ```
 
-##### Klasa (TODO)
+##### Klasa
+Model dla obiektów tego samego typu (czyli tej samej klasy). Opisuje cechy, definiujące stan obiektu (pola) oraz operacje, jakie obiekty udostępniają (metody)
+```java
+public class Point {
+    private int x;
+    private int y;
+    (...)
+    public int getX();
+    public void setX(int x);
+}
+```
 
-##### Metoda (TODO)
+##### Metoda
+Funkcja zdefiniowana na rzecz klasy, którą możemy wywoływać na rzecz obiektów (lub klasy, jeśli to metoda statyczna). Metoda składa się z deklaracji (czyli zadeklarowania wszystkich modyfikatorów, zwracanego typu, nazwy oraz listy parametrów wraz z typami, oraz definicji, czyli określenia tego, co metoda ma robić:
+```java
+public int add(int num1, int num2) { // deklaracja
+    int result = num1 + num2;        //definicja
+    return result;                   //definicja
+}
+```
 
-##### Pole (TODO)
+##### Pole
+Zdefiniowana na rzecz klasy zmienna, przechowujące dane określonego typu. Każdy z obiektów danej klasy posiada swoją wersję pól (chyba, że to pola statyczne - dostępne dla samej klasy i wspólne dla wszystkich jej obiektów). Zmiana stanu pola w jednym obiekcie nie wpływa na pola w innych obiektach danej klasy.
+
+##### Konstruktor
+
+##### Getter (akcesor)
+Metody służące do "wyciągania" danych z obiektu. Najczęściej rozumiemy przez to bezpośrednie zwrócenie wartości pola.
+```java
+int getX() {
+    return x;
+}
+```
+##### Setter (mutuator)
+Metody służące do modyfikacji stanu obiektu. Najczęściej rozumiemy przez to bezpośrednie nadpisanie wartości pola przez wartość przekazanego parametru
+```java
+public void setX(int x) {
+    this.x = x;    
+}
+```
 
 ## Zasady
 
