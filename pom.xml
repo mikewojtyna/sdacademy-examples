@@ -26,6 +26,8 @@
 		<module>generics</module>
 		<module>18_typy_generyczne</module>
 		<module>19_kolekcje</module>
+		<module>20_classic_io</module>
+		<module>21_new_io</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
