@@ -133,7 +133,37 @@ public void setX(int x) {
 }
 ```
 
+#### static
+Słowo kluczowe "static" może być użyte w różnych kontekstach - pełni wtedy nieco inne role:
+* static class - klasa może być statyczna jedynie jako wewnętrzna klasa innej klasy (oznacza to, że klasa najbardziej zewnętrzna nie może być statyczna). Jest to pewien sposób grupowania klas, natomiast zazwyczaj nie jest zalecany ani potrzebny. W przypadku, jeśli oznaczymy klasę jako static, dostęp do niej będzie z poziomu klasy a nie obiektu (podobnie jak do pól czy metod).
+
 ## Zasady
+
+##### Konwencje nazewnicze
+W Javie przyjęło się wykorzystywanie poniższych konwerncji:
+* zapis lowercase - wszystkie litery pisane są małą literą, nie stosujemy żadnych dodatkowych, specjalnych znaków - zastosowanie: nazwy paczek (nawet "zlepione" kilka wyrazów), np.:
+```java
+com.mylongpackage.utils
+```
+* zapis uppercase - wszystkie litery w wyrazie zapisujemy wielką literą, a wyrazy rozdzielamy znakiem podkreślnika "_", - zastosowanie: nazwy stałych i elementów enumów, np.
+```java
+public static final String SOME_NAME_OF_SOMETHING = "Special constant";
+private CarType myCarType = CarType.HEAVY_TRUCK;
+```
+* zapis CamelCase - Ogólnie zapisujemy wszystko małą listerą, oprócz pierwszych liter poszczególnych wyrazów w nazwie - zastosowanie: nazwy wszystkich struktur "typowych" - klas, interfejsów, enumów, np:
+```java
+public class DatabaseService { //(...)
+public enum CarType { //(...)
+public interface MouseListener { //(...)
+```
+* zapis mixedCase (albo inaczej Lower CamelCase) - zasada taka sama jak dla CamelCase, z tą różnicą, że pierwszą literę zapisujemy jako małą - zastosowanie: nazwy zmiennych, pól i metod, np:
+```java
+String myName = "Antek"; //zmienna
+(...)
+private String myStringField; //pole
+
+public String getMyStringField() { //(...) metoda
+```
 
 ##### Zasady SOLID (TODO)
  - S - Single Responsibility Principle
