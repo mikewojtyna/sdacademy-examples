@@ -2,10 +2,14 @@ package exercies;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 public class DataICzas {
 
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        String date1 = scanner.nextLine();
 
         LocalDate dzisiaj = LocalDate.now();
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -24,7 +28,7 @@ public class DataICzas {
         System.out.println(taChwila.format(timeFormatter));
 
         LocalDateTime dzisiajDataCzas = LocalDateTime.now();
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy -- HH:mm");
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy -- HH:mm:ss");
         System.out.println(dzisiajDataCzas.format(dateTimeFormatter));
 
         ZonedDateTime czasParyz = ZonedDateTime.now(ZoneId.of("Europe/Paris"));
@@ -35,7 +39,11 @@ public class DataICzas {
         System.out.println("W Tokio jest teraz " + czasTokio.format(dateTimeFormatter));
         System.out.println("W Los Angeles jest teraz " + czasLosAngeles.format(dateTimeFormatter));
 
-        String urodzinyNapis1 = "13/10-1992";
+        ZonedDateTime timeConverted = ZonedDateTime.of(dzisiajDataCzas, ZoneId.of("America/Los_Angeles"));
+        System.out.println("Czas przekonwertowany z polski na los " +
+                "angeles " + timeConverted.format(dateTimeFormatter));
+
+        String urodzinyNapis1 = "13/09/1992";
         String urodzinyNapis2 = "13/10/1992";
         LocalDate urodziny1 = LocalDate.parse(urodzinyNapis1, dateFormatter);
         LocalDate urodziny2 = LocalDate.parse(urodzinyNapis2, dateFormatter);

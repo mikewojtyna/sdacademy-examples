@@ -23,7 +23,6 @@
 		<module>15_adnotacje</module>
 		<module>16_string</module>
 		<module>17_data_czas</module>
-		<module>generics</module>
 		<module>18_typy_generyczne</module>
 		<module>19_kolekcje</module>
 		<module>20_classic_io</module>

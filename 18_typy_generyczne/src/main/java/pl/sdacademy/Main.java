@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Pudelko<String, Integer> pudelkoNaNapisy = new Pudelko<>();
         pudelkoNaNapisy.wlozDoPudelkaT("Jakis napis");
-        pudelkoNaNapisy.wlozDoPudelkaS(3);
+        pudelkoNaNapisy.wlozDoPudelkaS(1);
 
 
         Ksztalt[] ksztalty = {new Kwadrat(3),
