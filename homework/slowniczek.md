@@ -136,6 +136,73 @@ public void setX(int x) {
 #### static
 Słowo kluczowe "static" może być użyte w różnych kontekstach - pełni wtedy nieco inne role:
 * static class - klasa może być statyczna jedynie jako wewnętrzna klasa innej klasy (oznacza to, że klasa najbardziej zewnętrzna nie może być statyczna). Jest to pewien sposób grupowania klas, natomiast zazwyczaj nie jest zalecany ani potrzebny. W przypadku, jeśli oznaczymy klasę jako static, dostęp do niej będzie z poziomu klasy a nie obiektu (podobnie jak do pól czy metod).
+* static field - statyczne pole alokowane jest w momencie startu programu, ale co ważniejsze - przynależy do klasy, a nie do konkretnych obiektów tej klasy. Oznacza to, że kiedy je nadpisujemy albo pobieramy jego wartość, pracujemy na jednym i tym samym polu. Dostęp do niego mamy zarówno z poziomu klasy jak i obiektów danej klasy.
+```java
+public class MyClass {
+    public static String staticField; //pole jest publiczne tylko na użytek tego przykładu - normalnie tego unikamy
+(...)
+    MyClass.staticField = "Hello";
+    MyClass objectOfMyClass = new MyClass();
+    objectOfMyClass.staticField = "World";
+    boolean isTheSamePlaceInMemory = objectOfMyClass.staticField == MyClass.staticField; // =true
+```
+* static method - metody statyczne, podobnie jak pola, zdefiniowane są na rzecz klasy a nie obiektów. Możemy je wywoływać zarówno z poziomu klasy jak i obiektów tej klasy, jednak ciało takiej metody ma pewne ograniczenia - nie możemy w jego wnętrzu korzystać ze zwykłych (a więc niestatycznych) pól i metod naszej klasy.
+```java
+public class MyClass {
+    private int someNumber;
+    public MyClass(int someNumber) {
+        this.someNumber = someNumber;
+    }
+    (... - gettery itd)
+    
+    public static int addTwoNumbers(int num1, int num2) {
+        return num1 + num2; // OK
+        return num1 + this.someNumber // ŹLE!
+        
+        MyClass objectOfMyClass = new MyClass(5);
+        return num1 + objectOfMyClass.getSomeNumber(); //dobrze, bo nie użyłem 'this', ale utworzyłem obiekt i dopiero potem pobrałem jego wartość
+```
+
+##### final
+Słowo kluczowe final, podobnie jak static, może istnieć w różnych kontekstach i oznacza wtedy różne rzeczy. W przypadku, kiedy final stoi przed deklaracją pola lub zmiennej, oznacza to, że może zostać zainicjalizowane (a więc wartość referencji - "adres" obiektu) może zostać przypisany tylko raz. Nie oznacz to, że samego obiektu nie można modyfikować jego metodami.
+```java
+public class MyClass {
+    private final MyFieldClass myField = new MyClass(5); //inicjalizacja, a więc przypisanie początkowej wartości może odbyć się tylko raz - w przypadku pól albo w sposób statyczny (tak jak tutaj), albo w konstruktorze.
+    private final MyClass myField2;
+    
+    public MyClass() {
+        myField2 = new MyFieldClass(7);
+    }
+    
+    public badMethodTriesToChangeFinalField() {
+        this.myField = new MyFieldClass(8); //źle - próbujemy nadpisać wartość referencji, a więc przypisać nowy obiekt do pola final
+    }
+    
+    pubic goodMethodChangesStateOfFinalObject() {
+        this.myField.setNewNumber(9); //dobrze - modyfikujemy obiekt wewnętrznie, ale nie zmieniamy referencji pola
+    }
+```
+Jeśli final stoi przed deklaracją metody, oznacza to, że nie można takiej metody przeciążyć (nadpisać) w klasach pochodnych od naszej klasy.
+```java
+public MyClass {
+    public final void myMethod() { //tej metody nie przeciążymy w klasach pochodnych
+    }
+}
+
+public class MyChildClass extend MyClass {
+    @Override
+    public final void myMethod() { //źle! nie możemy tej metody przeciążać
+    }
+}
+```
+Jeśli final stoi przed deklaracją klasy, oznacza, że nie możemy takiej klasy rozszerzać.
+```java
+public final MyClass {
+}
+public class MyChildClass extend MyClass { //źle! nie możmy rozszerzać klasy final!
+}
+```
+    
 
 ## Zasady
 
