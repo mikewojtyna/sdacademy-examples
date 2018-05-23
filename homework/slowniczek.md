@@ -260,7 +260,12 @@ Prawo Demeter mówi, że metoda może wywoływać jedynie metody z:
 
 Dzięki zachowaniu tej reguły, nasza klasa nie musi znać zbyt wielu szczegółów implementacyjnych obiektów, z których 
 korzysta, a więc zależność od nich staje się słabsza.
-
+```java
+public void someMethod(MyClass objectOne) {
+    objectOne.getObjectTwo().getObjectThree().doSomething(); //prawo Demeter zostało złamane - metoda woła metodę obiektu spoza listy dopuszczalnych przez prawo Demeter
+    objectOne.doSomethingUsinObjectTwoAndThenObjectThree(); //pomijając infantylną nazwę, prawo Demeter zostaje zachowane - wywołujemy metodę tylko na obiekcie przekazanym przez parametr
+}
+```
 ## OOP
 
 ##### Dziedziczenie
