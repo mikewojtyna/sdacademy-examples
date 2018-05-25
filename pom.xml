@@ -27,6 +27,9 @@
 		<module>19_kolekcje</module>
 		<module>20_classic_io</module>
 		<module>21_new_io</module>
+		<module>22_wspolbieznosc</module>
+		<module>23_pliki_konfiguracyjne</module>
+		<module>24_programowanie_funkcyjne</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
