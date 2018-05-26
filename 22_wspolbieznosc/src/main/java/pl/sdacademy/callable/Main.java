@@ -21,7 +21,7 @@ public class Main {
             Future<String> przyszlyNapis = executorService.submit(new LosowyNapis()); //wynik ich działania jest obiektem typu Future - czyli wartością mającą się pojawić w przyszłości
             listaPrzyszlychNapisow.add(przyszlyNapis);
         }
-
+        executorService.shutdown();
         for(Future<String> przyszlyNapis : listaPrzyszlychNapisow) { //iterujemy po liście naszych Future'ów
             try {
                 String prawdziwyNapis = przyszlyNapis.get(); //metoda get zwróci wartość naszego Future'a o ile już się pojawiła. W przeciwnym wypadku będzie czekać na jej pojawienie. Dopiero wtedy program ruszy dalej.
@@ -32,6 +32,6 @@ public class Main {
                 e.printStackTrace();
             }
         }
-        executorService.shutdown();
+
     }
 }

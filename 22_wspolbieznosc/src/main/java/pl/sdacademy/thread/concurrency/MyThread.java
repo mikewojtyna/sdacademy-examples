@@ -14,8 +14,9 @@ public class MyThread extends Thread { //przeciążanie klasy Thread jest raczej
             counter++;
             System.out.println(getName() + " mówi: hej poraz " + counter);
             try {
-                sleep(random.nextInt(2000)); //metoda statyczna sleep jest wywoływana zawsze na rzecz wątku, z którego została wywołana. Służy ona do uśpienia wątku na porządany czas (w ms)
+                sleep(random.nextInt(20)); //metoda statyczna sleep jest wywoływana zawsze na rzecz wątku, z którego została wywołana. Służy ona do uśpienia wątku na porządany czas (w ms)
             } catch (InterruptedException e) {
+                stop = true;
                 e.printStackTrace();
             }
         }

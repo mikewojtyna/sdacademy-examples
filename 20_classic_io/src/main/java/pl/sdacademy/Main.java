@@ -12,7 +12,6 @@ public class Main {
         String inputPath = "files" + File.separator + "sourceFile.txt";
         String outputPath = "files" + File.separator + "destFile.txt";
 
-        Main main = new Main();
         try {
             br = new BufferedReader(new FileReader(inputPath));
             bw = new BufferedWriter(new FileWriter(outputPath, true));

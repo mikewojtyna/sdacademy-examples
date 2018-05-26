@@ -13,8 +13,8 @@ public class Main {
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         for (int i = 0; i < 10; i++) {
-            executorService.submit(new Konsument(niebezpiecznePudelko));
-            executorService.submit(new Producent(niebezpiecznePudelko));
+            executorService.submit(new Konsument(bezpiecznePudelko));
+            executorService.submit(new Producent(bezpiecznePudelko));
         }
         executorService.shutdown();
     }

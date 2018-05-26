@@ -15,10 +15,11 @@ public class Producent implements Runnable {
     @Override
     public void run() { //zadaniem producenta jest umieszczanie w pudełku zawartości - losowo wybranego napisu
         for (int i = 0; i < 50; i++) {
-            boolean czySieUdalo = pudelko.wlozDoPudelka(pobierzLosowyElement());
+            String nowyElement = pobierzLosowyElement();
+            boolean czySieUdalo = pudelko.wlozDoPudelka(nowyElement);
             if (czySieUdalo) {
                 System.out.println(Thread.currentThread().getName()
-                    + "Producent: udało mi się włożyć do pudełka nowy element");
+                    + "Producent: udało mi się włożyć do pudełka nowy element " + nowyElement);
             } else {
                 System.out.println(Thread.currentThread().getName()
                     + "Producent: nie udało mi się włożyć nowego elementu do pudełka..."); // podobnie jak w przypadku konsumenta, chcemy uniknąć niepotrzebnej pracy producenta gdy pudełko jest pełne i nie da się do niego nic włożyć
