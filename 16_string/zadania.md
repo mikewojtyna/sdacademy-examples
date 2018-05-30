@@ -1,0 +1,11 @@
+1. Utwórz String "Ala ma kota" używając StringBuildera i metody append.
+2. Znajdź znak na 5 pozycji w napisie "Ala ma kota" (metoda charAt())
+3. Sprawdź czy napis "Ala ma kota" zaczyna się od słowa "Ala" (startsWith()) i kończy słowem "kota" (endsWith)
+4. Sprawdź długoćć napisu "Litwo! ojczyzno moja!" (length())
+5. Sprawdź, na którym miejscu występuje znak d w napisie "abcdefgh" (indexOf())
+6. Wytnij z napisu "Ala ma kota, kot ma mleko" napis od 7 do 12 znaku (substring)
+7. Sprawdź czy napis "Ala ma kota" zawiera napis "ALA" (contains). Nie zwracaj uwagi na wielkość liter (toUpperCase()
+lub toLowerCase())
+8. Sprawdź czy napisy "Ala ma kota" i "ALA MA KOTA" są takie same (equals(), equalsIgnoreCase())
+9. Zamień imię Ala na Tadek w napisie "Ala ma kota" (replace())
+10. Usuń białe znaki (spacje, nowe linie, tabulatory) z końca i początku napisu "    ALA MA KOTA    " (trim())

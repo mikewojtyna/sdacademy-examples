@@ -1,0 +1,1 @@
+1. Zaprojektuj typ Enum, który będzie umożliwiał pobranie procentu zniżki w zależności od dnia tygodnia.

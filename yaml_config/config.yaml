@@ -1,0 +1,13 @@
+version: 1.0
+released: 2012-11-30
+
+# Protocols
+fileExtensions:
+   - zip
+   - rar
+   - txt
+
+# Users
+users:
+    adrian: admin
+    bogdan: normal
