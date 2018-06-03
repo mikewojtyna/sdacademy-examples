@@ -67,8 +67,9 @@ class AppBootstrapper {
 		// we are using a classpath resource (inside src/main/resources), so we cannot use Paths to create a
 		// path (the resource is relative inside the project structure)
 
-		// we need a "/" when using getResourceAsStream - it will search for the file with "people.txt" name
-		// anywhere inside the classpath
+		// We need a "/" when using getResourceAsStream - it will search for the file with "people.txt" name
+		// inside the root classpath. Note that if we placed the file inside another directory (e.g.
+		// files/people.txt) then we would need to use "/files/people.txt" name in getResourceAsStream method
 
 		// using try-with-resources to avoid system resource leakage
 		try (BufferedReader resource = new BufferedReader(new InputStreamReader(AppBootstrapper.class
