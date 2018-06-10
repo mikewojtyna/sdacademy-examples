@@ -11,9 +11,13 @@
 
 	<artifactId>05_oop</artifactId>
 	<packaging>pom</packaging>
-	<modules>
-		<module>17_data_czas</module>
-	</modules>
 
+	<dependencies>
+		<dependency>
+			<groupId>pl.sdacademy</groupId>
+			<artifactId>17_data_czas</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 
 </project>
