@@ -31,6 +31,7 @@
 		<module>23_pliki_konfiguracyjne</module>
 		<module>24_programowanie_funkcyjne</module>
 		<module>25-swing</module>
+		<module>26-tdd</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
