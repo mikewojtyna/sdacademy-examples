@@ -8,6 +8,7 @@ This repository contains Java examples for sdacademy Java course.
 4. ``array``
 5. ``type``
 6. ``25-swing``
+7. ``26-tdd``
 
 ##### hello-world
 Your first Java application!
@@ -27,4 +28,8 @@ Includes type examples and possible floating point precision and rounding
 issues.
 
 ##### 25-swing
-Swing GUI examples and simple application to load people from file into a JTable (```pl.sdacademy.swing.peoplefile.People``` class)
+Swing GUI examples and simple application to load people from file into a JTable (```pl.sdacademy.swing.peoplefile
+.People``` class).
+
+##### 26-tdd
+A gentle introduction to Test-driven development.
