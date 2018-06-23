@@ -1,6 +1,7 @@
 package pl.sdacademy.algorithms.sort;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -17,7 +18,7 @@ import static org.assertj.core.api.Assertions.*;
 class SortingTest {
 	private static Stream<Arguments> params() {
 		return Stream.of(
-			// input: {}, expected: {}
+			// input: empty list, expected: empty list
 			Arguments.of(Collections.emptyList(), Collections.emptyList()),
 			// input: {0}, expected: {0}
 			Arguments.of(Collections.singletonList(0), Collections.singletonList(0)),
@@ -57,5 +58,19 @@ class SortingTest {
 
 		// then
 		assertThat(sortedList).isEqualTo(expected);
+	}
+
+	@DisplayName("should not modify input list and create a new copy instead")
+	@Test
+	void copy() {
+		// given
+		Sorter sorter = new BubbleSorter();
+		List<Integer> input = Arrays.asList(3, 0, 2, 1);
+
+		// when
+		List<Integer> sortedList = sorter.sort(input);
+
+		// then
+		assertThat(sortedList).isNotSameAs(input);
 	}
 }
