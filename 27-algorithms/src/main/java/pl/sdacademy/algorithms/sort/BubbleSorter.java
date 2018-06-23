@@ -7,7 +7,9 @@ class BubbleSorter implements Sorter {
 	public <T extends Comparable<T>> List<T> sort(List<T> input) {
 		if (input.size() > 1) {
 			for (int i = 0; i < input.size() - 1; i++) {
-				swapAdjacentElements(i, input);
+				for (int j = 0; j < input.size() - 1; j++) {
+					swapAdjacentElements(j, input);
+				}
 			}
 		}
 		return input;
