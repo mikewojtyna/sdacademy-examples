@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
@@ -17,7 +18,9 @@ class SortingTest {
 			// input: {}, expected: {}
 			Arguments.of(Collections.emptyList(), Collections.emptyList()),
 			// input: {0}, expected: {0}
-			Arguments.of(Collections.singletonList(0), Collections.singletonList(0))
+			Arguments.of(Collections.singletonList(0), Collections.singletonList(0)),
+			// input: {1, 0}, expected: {0, 1}
+			Arguments.of(Arrays.asList(1, 0), Arrays.asList(0, 1))
 			// end of test cases
 		);
 	}
