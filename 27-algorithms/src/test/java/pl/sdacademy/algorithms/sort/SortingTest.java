@@ -8,6 +8,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.*;
@@ -26,9 +28,21 @@ class SortingTest {
 			// input: {1, 0, 2}, expected: {0, 1, 2}
 			Arguments.of(Arrays.asList(1, 0, 2), Arrays.asList(0, 1, 2)),
 			// input: {2, 1, 0}, expected: {0, 1, 2}
-			Arguments.of(Arrays.asList(2, 1, 0), Arrays.asList(0, 1, 2))
+			Arguments.of(Arrays.asList(2, 1, 0), Arrays.asList(0, 1, 2)),
+			// input: {5, 3, 10, 1}, expected: {1, 3, 5, 10}
+			Arguments.of(Arrays.asList(5, 3, 10, 1), Arrays.asList(1, 3, 5, 10)),
+			// input: range from 99 to 0, expected: range from 0 to 99
+			Arguments.of(range(99, 0), range(0, 99))
 			// end of test cases
 		);
+	}
+
+	private static List<Integer> range(int from, int to) {
+		if (from < to) {
+			return IntStream.rangeClosed(from, to).boxed().collect(Collectors.toList());
+		}
+		return IntStream.rangeClosed(to, from).boxed().sorted(Collections.reverseOrder()).collect(Collectors
+			.toList());
 	}
 
 	@DisplayName("should sort input list ascending")
