@@ -32,6 +32,7 @@
 		<module>24_programowanie_funkcyjne</module>
 		<module>25-swing</module>
 		<module>26-tdd</module>
+		<module>27-algorithms</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
