@@ -15,7 +15,9 @@ class SortingTest {
 	private static Stream<Arguments> params() {
 		return Stream.of(
 			// input: {}, expected: {}
-			Arguments.of(Collections.emptyList(), Collections.emptyList())
+			Arguments.of(Collections.emptyList(), Collections.emptyList()),
+			// input: {0}, expected: {0}
+			Arguments.of(Collections.singletonList(0), Collections.singletonList(0))
 			// end of test cases
 		);
 	}
