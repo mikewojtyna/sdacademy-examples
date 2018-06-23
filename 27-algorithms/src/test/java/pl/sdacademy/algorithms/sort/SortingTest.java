@@ -22,7 +22,9 @@ class SortingTest {
 			// input: {1, 0}, expected: {0, 1}
 			Arguments.of(Arrays.asList(1, 0), Arrays.asList(0, 1)),
 			// input: {0, 1}, expected: {0, 1}
-			Arguments.of(Arrays.asList(0, 1), Arrays.asList(0, 1))
+			Arguments.of(Arrays.asList(0, 1), Arrays.asList(0, 1)),
+			// input: {1, 0, 2}, expected: {0, 1, 2}
+			Arguments.of(Arrays.asList(1, 0, 2), Arrays.asList(0, 1, 2))
 			// end of test cases
 		);
 	}
