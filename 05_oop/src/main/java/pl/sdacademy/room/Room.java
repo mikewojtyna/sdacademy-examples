@@ -1,14 +1,21 @@
 package pl.sdacademy.room;
 
-public class Room {
+class Room {
 	private final int width;
 	private final int height;
 	private Table[] tables;
 
-	public Room(int width, int height) {
+	Room(int width, int height) {
 		this.width = width;
 		this.height = height;
 		tables = new Table[0];
+	}
+
+	private static void copyFromTo(Table[] oldTables, Table[] tables) {
+		// copy all old elements
+		for (int i = 0; i < oldTables.length; i++) {
+			tables[i] = oldTables[i];
+		}
 	}
 
 	/**
@@ -16,16 +23,13 @@ public class Room {
 	 *
 	 * @param table a new table
 	 */
-	public void addTable(Table table) {
+	void addTable(Table table) {
 		// create variable containing old tables
 		Table[] oldTables = tables;
 		// increase size of target array by 1, because we add a new table
 		tables = new Table[oldTables.length + 1];
-
-		// copy all old elements
-		for (int i = 0; i < oldTables.length; i++) {
-			tables[i] = oldTables[i];
-		}
+		// copy old tables to tables
+		copyFromTo(oldTables, tables);
 		// add a new table to the end of the target array
 		int indexOfLastElement = tables.length - 1;
 		tables[indexOfLastElement] = table;
@@ -36,13 +40,11 @@ public class Room {
 	 *
 	 * @return the total area of all tables
 	 */
-	public int tablesArea() {
+	int tablesArea() {
 		int tablesArea = 0;
-
 		for (Table table : tables) {
 			tablesArea += table.area();
 		}
-
 		return tablesArea;
 	}
 
@@ -51,7 +53,7 @@ public class Room {
 	 *
 	 * @return the space left after subtracting space occupied by tables
 	 */
-	public int spaceLeft() {
+	int spaceLeft() {
 		return width * height - tablesArea();
 	}
 
