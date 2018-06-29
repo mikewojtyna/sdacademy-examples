@@ -37,8 +37,13 @@ public class Room {
 	 * @return the total area of all tables
 	 */
 	public int tablesArea() {
-		// TODO: implement
-		return -1;
+		int tablesArea = 0;
+
+		for (Table table : tables) {
+			tablesArea += table.area();
+		}
+
+		return tablesArea;
 	}
 
 	/**
@@ -47,8 +52,7 @@ public class Room {
 	 * @return the space left after subtracting space occupied by tables
 	 */
 	public int spaceLeft() {
-		// TODO: return space left in this room
-		return -1;
+		return width * height - tablesArea();
 	}
 
 }
