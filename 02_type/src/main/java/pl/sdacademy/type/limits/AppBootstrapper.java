@@ -28,7 +28,7 @@ class AppBootstrapper {
 		// float max value
 		System.out.println("float max: " + Float.MAX_VALUE);
 		// that's how you create float var
-		double floatVar = 10F;
+		float floatVar = 10F;
 
 		// char type - just a single character - note '' instead of ""
 		char charVar = '@';
