@@ -11,6 +11,40 @@ class Room {
 		tables = new Table[0];
 	}
 
+	/**
+	 * Remove table from this room. If table doesn't exist, an exception is thrown.
+	 *
+	 * @param table a table to remove
+	 */
+	void removeTable(Table table) {
+		int matchingTableIndex = findIndex(table);
+		removeTableWithIndex(matchingTableIndex);
+	}
+
+	private void removeTableWithIndex(int matchingTableIndex) {
+		Table[] oldTables = tables;
+		tables = new Table[oldTables.length - 1];
+		copyFromTo(oldTables, tables, matchingTableIndex);
+	}
+
+	private void copyFromTo(Table[] oldTables, Table[] tables, int withoutIndex) {
+		// copy all old elements
+		for (int i = 0; i < oldTables.length; i++) {
+			if (i != withoutIndex) {
+				tables[i] = oldTables[i];
+			}
+		}
+	}
+
+	private int findIndex(Table table) {
+		for (int i = 0; i < tables.length; i++) {
+			if (tables[i].equals(table)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
 	private static void copyFromTo(Table[] oldTables, Table[] tables) {
 		// copy all old elements
 		for (int i = 0; i < oldTables.length; i++) {
@@ -34,6 +68,7 @@ class Room {
 		int indexOfLastElement = tables.length - 1;
 		tables[indexOfLastElement] = table;
 	}
+
 
 	/**
 	 * Calculates the total area of all tables in this room.

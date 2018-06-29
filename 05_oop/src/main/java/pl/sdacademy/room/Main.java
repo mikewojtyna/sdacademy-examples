@@ -5,12 +5,15 @@ public class Main {
 		Room room = new Room(1000, 2000);
 		room.addTable(new Table(100, 200));
 		room.addTable(new Table(50, 100));
-		room.addTable(new Table(500, 200));
+		Table table = new Table(500, 200);
+		room.addTable(table);
 
-		int spaceLeft = room.spaceLeft();
-		int tablesArea = room.tablesArea();
+		System.out.println("Space left: " + room.spaceLeft());
+		System.out.println("Tables area: " + room.tablesArea());
 
-		System.out.println("Space left: " + spaceLeft);
-		System.out.println("Tables area: " + tablesArea);
+		room.removeTable(table);
+
+		System.out.println("Space left: " + room.spaceLeft());
+		System.out.println("Tables area: " + room.tablesArea());
 	}
 }
