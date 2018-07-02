@@ -28,10 +28,12 @@ class Room {
 	}
 
 	private void copyFromTo(Table[] oldTables, Table[] tables, int withoutIndex) {
-		// copy all old elements
+		// copy all old elements except of element with "withoutIndex"
+		int tablesNextNullIndex = 0;
 		for (int i = 0; i < oldTables.length; i++) {
 			if (i != withoutIndex) {
-				tables[i] = oldTables[i];
+				tables[tablesNextNullIndex] = oldTables[i];
+				tablesNextNullIndex++;
 			}
 		}
 	}
