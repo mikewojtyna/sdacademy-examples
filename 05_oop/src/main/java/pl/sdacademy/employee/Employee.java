@@ -38,6 +38,12 @@ class Employee {
 		this.height = height;
 	}
 
+	void addNewInterest(String... interests) {
+		for (String interest : interests) {
+			addNewInterest(interest);
+		}
+	}
+
 	void addNewInterest(String interest) {
 		String[] oldInterests = interests;
 		String[] newInterests = new String[oldInterests.length + 1];
