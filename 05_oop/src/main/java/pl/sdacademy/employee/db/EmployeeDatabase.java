@@ -22,10 +22,10 @@ class EmployeeDatabase {
 	List<Employee> readAllEmployees() {
 		try {
 			List<String> lines = Files.readAllLines(pathToFile);
-			ArrayList<Employee> employees = new ArrayList<>();
+			List<Employee> employees = new ArrayList<>();
 
-			for (String currrentLine : lines) {
-				String[] split = currrentLine.split(" ");
+			for (String currentLine : lines) {
+				String[] split = currentLine.split(" ");
 				employees.add(new Employee(split[0], split[1], split[2], split[3]));
 			}
 
@@ -41,17 +41,17 @@ class EmployeeDatabase {
 	 * Saves a new employee in the database.
 	 *
 	 * @param employee a new employee
+	 * @throws CannotSaveEmployeeException thrown when employee cannot be saved
 	 */
-	void saveEmployee(Employee employee) {
+	void saveEmployee(Employee employee) throws CannotSaveEmployeeException {
 		String line = employee.getFirstName() + " " + employee.getLastName() + " " + employee.getSex() + " " +
 			employee.getBirthDate();
 		try {
 			Files.write(pathToFile, Arrays.asList(line), StandardOpenOption.CREATE, StandardOpenOption
 				.APPEND);
 		}
-		catch (IOException e) {
-			e.printStackTrace();
+		catch (IOException originalException) {
+			throw new CannotSaveEmployeeException("Cannot save a new employee", originalException);
 		}
-
 	}
 }
