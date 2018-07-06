@@ -2,7 +2,7 @@ package pl.sdacademy.employee;
 
 import java.util.Arrays;
 
-class Employee {
+public class Employee {
 	private final String firstName;
 	private final String lastName;
 	private final String sex;
@@ -19,7 +19,8 @@ class Employee {
 	 * @param birthDate a birth date
 	 * @throws IllegalArgumentException thrown when sex is not "male" or "female"
 	 */
-	Employee(String firstName, String lastName, String sex, String birthDate) throws IllegalArgumentException {
+	public Employee(String firstName, String lastName, String sex, String birthDate) throws
+		IllegalArgumentException {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		if (isInvalid(sex)) {
@@ -28,6 +29,22 @@ class Employee {
 		this.sex = sex;
 		this.birthDate = birthDate;
 		this.interests = new String[0];
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public String getBirthDate() {
+		return birthDate;
 	}
 
 	private boolean isInvalid(String sex) {
