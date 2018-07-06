@@ -26,3 +26,7 @@ Tip:
 Scanner scanner = new Scanner(System.in);
         String date1 = scanner.nextLine();
 ```
+
+10. Stworzyć klasę ``Animal``, która ma metodę ``void eat(Fruit fruit)``. Zwierzę ma zjeść owoc (np. ustawić wartość 
+odpowiendiego pola w klasie ``Fruit``) tylko wtedy, gdy je lubi. W jaki sposób zdefiniować, jakie owoce lubi dane 
+zwierzę?
