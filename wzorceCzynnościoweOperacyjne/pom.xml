@@ -9,15 +9,7 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>hr-lady</artifactId>
-	<dependencies>
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>RELEASE</version>
-			<scope>compile</scope>
-		</dependency>
-	</dependencies>
+	<artifactId>wzorceCzynnościoweOperacyjne</artifactId>
 
 
 </project>

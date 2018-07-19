@@ -38,5 +38,8 @@ public class Main {
 
 		System.out.println("czy listy są takie same " + napisy2.equals(napisy3));
 
+		List<String> listaImion = new ArrayList<>();
+
+
 	}
 }

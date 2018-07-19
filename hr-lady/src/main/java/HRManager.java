@@ -1,3 +1,5 @@
+import org.junit.Assert;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -39,8 +41,8 @@ public class HRManager {
 	}
 
 	public List<Employee> sortByFirstNameBubble() {
-		for (int j = 0; j < allEmployees.size() -1 ; j++) {
-			for (int i = 0; i < allEmployees.size() - 1 -j; i++) {
+		for (int j = 0; j < allEmployees.size() - 1; j++) {
+			for (int i = 0; i < allEmployees.size() - 1 - j; i++) {
 				if (allEmployees.get(i).getFirstName().compareTo(allEmployees.get(i + 1).getFirstName
 					()) < 0) {
 
@@ -52,6 +54,32 @@ public class HRManager {
 			}
 		}
 		return allEmployees;
+	}
 
+	public List<Employee> quickSort(List<Employee> employees, int low, int high) {
+		if (low < high) {
+			int pi = partition(employees, low, high);
+
+			quickSort(employees, low, pi - 1);
+			quickSort(employees, pi + 1, high);
+		}
+		return employees;
+	}
+
+	private int partition(List<Employee> employees, int low, int high) {
+		Employee pivot = employees.get(high);
+		int i = low - 1;
+		for (int j = low; j <= high - 1; j++) {
+			if (employees.get(j).getLastName().compareTo(pivot.getLastName()) <= 0) {
+				i++;
+				Employee temp = employees.get(j);
+				employees.set(j, employees.get(i));
+				employees.set(i, temp);
+			}
+		}
+		Employee temp = employees.get(i + 1);
+		employees.set(i + 1, employees.get(high));
+		employees.set(high, temp);
+		return i + 1;
 	}
 }
