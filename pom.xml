@@ -41,6 +41,11 @@
 		<module>pelnomocnik-proxy</module>
 		<module>wzorceCzynnościoweOperacyjne</module>
 		<module>OdTak</module>
+		<module>TDDDDDD</module>
+		<module>Samochod</module>
+		<module>Samochodv2</module>
+		<module>Auto</module>
+		<module>Autko</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>

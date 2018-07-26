@@ -4,26 +4,33 @@ import java.util.Scanner;
 
 public class Uzytkownik {
 
-	private Integer id;
+	private int id;
 	private int pozycja;
 	private Mediator mediator;
-	private String imieDodawane;
+	private String imieUzytkownika;
+	private String nazwiskoUzytkownika;
 	Scanner scanner = new Scanner(System.in);
 
-	public Uzytkownik(Integer id, String imieDodawane) {
+	public Uzytkownik(int id, int pozycja, String imieUzytkownika, String nazwiskoUzytkownika) {
 		this.id = id;
-		this.imieDodawane = imieDodawane;
+		this.imieUzytkownika = imieUzytkownika;
 		this.pozycja = pozycja;
+		this.nazwiskoUzytkownika=nazwiskoUzytkownika;
 	}
 
-	public String getImieDodawane() {
+	public String getImieUzytkownika() {
 		System.out.println("Podaj imie uzytkownika. ");
-		imieDodawane = scanner.nextLine();
-		return imieDodawane;
+		imieUzytkownika = scanner.nextLine();
+		return imieUzytkownika;
 	}
-	public Integer getId() {
-		System.out.println("Podaj id. ");
-		id = scanner.nextInt();
+
+	public String getNazwiskoUzytkownika(){
+		System.out.println("Podaj nazwisko. ");
+		nazwiskoUzytkownika = scanner.nextLine();
+		return nazwiskoUzytkownika;
+	}
+
+	public int getId() {
 		return id;
 	}
 
