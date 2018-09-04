@@ -33,7 +33,8 @@ class JdbcIntegrationTest {
 			// populate the db with "goobar" and "foobar"
 			createTable(connection);
 			populate(connection, "goobar", "foobar");
-			PreparedStatement updateNameStatement = connection.prepareStatement("UPDATE Employee SET " + "name=? " + "WHERE name=?");
+			PreparedStatement updateNameStatement = connection.prepareStatement("UPDATE Employee SET " +
+				"name=? " + "WHERE name=?");
 
 			// when
 			// should update name from "goobar" to "hoobar"
@@ -56,7 +57,7 @@ class JdbcIntegrationTest {
 			}
 			finally {
 				// end the transaction - always
-				connection.setAutoCommit(false);
+				connection.setAutoCommit(true);
 			}
 			// collect the commited names
 			ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM Employee");
@@ -75,7 +76,7 @@ class JdbcIntegrationTest {
 		throw new RuntimeException();
 	}
 
-	@DisplayName("should show how to use prepared statements")
+	@DisplayName("show how to use prepared statements")
 	@Test
 	void preparedStatement() throws Exception {
 		// given
@@ -114,7 +115,8 @@ class JdbcIntegrationTest {
 	}
 
 	private void populate(Connection connection, String... names) throws Exception {
-		PreparedStatement insertEmployeePreparedStatement = connection.prepareStatement("INSERT INTO Employee" + "(name) VALUES" + "(?)");
+		PreparedStatement insertEmployeePreparedStatement = connection.prepareStatement("INSERT INTO Employee"
+			+ "(name) VALUES" + "(?)");
 		Stream.of(names).forEach(name -> {
 			try {
 				insertEmployeePreparedStatement.setString(1, name);
@@ -127,7 +129,8 @@ class JdbcIntegrationTest {
 	}
 
 	private void createTable(Connection connection) throws SQLException {
-		connection.prepareStatement("CREATE TABLE Employee" + " (emp_id int PRIMARY KEY AUTO_INCREMENT, name " + "varchar" + "(30))").execute();
+		connection.prepareStatement("CREATE TABLE Employee" + " (emp_id int PRIMARY KEY AUTO_INCREMENT, name "
+			+ "varchar" + "(30))").execute();
 	}
 
 	@DisplayName("should run create script and find goobar")
@@ -157,7 +160,8 @@ class JdbcIntegrationTest {
 
 	private void populateInline(Connection connection) throws SQLException {
 		Statement statement = connection.createStatement();
-		statement.execute("CREATE TABLE Employee" + " (emp_id int PRIMARY KEY AUTO_INCREMENT, name " + "varchar" + "(30))");
+		statement.execute("CREATE TABLE Employee" + " (emp_id int PRIMARY KEY AUTO_INCREMENT, name " +
+			"varchar" + "(30))");
 		statement.execute("INSERT INTO Employee(name) VALUES('goobar')");
 	}
 
