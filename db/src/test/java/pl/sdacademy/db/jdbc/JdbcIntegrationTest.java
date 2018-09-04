@@ -1,4 +1,4 @@
-package pl.sdacademy.db;
+package pl.sdacademy.db.jdbc;
 
 import org.apache.commons.io.IOUtils;
 import org.h2.jdbcx.JdbcDataSource;
