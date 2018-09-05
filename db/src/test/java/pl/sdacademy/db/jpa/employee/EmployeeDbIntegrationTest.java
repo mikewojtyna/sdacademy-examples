@@ -27,9 +27,83 @@ public class EmployeeDbIntegrationTest {
 		factory.close();
 	}
 
+	/**
+	 * @see <a href="https://vladmihalcea.files.wordpress.com/2014/07/jpaentitystates.png">See how JPA manages
+	 * transition states</a>
+	 */
+	@DisplayName("create new department in first transaction, next create a new query in another transaction, " +
+		"then set new department name and finally assert that this name is updated on commit")
+	@Test
+	void managedCase() {
+		// given
+		EntityManager entityManager = factory.createEntityManager();
+		// right now, this is a transient entity - not managed by JPA context
+		Department newDepartment = new Department();
+		String findDepartmentQueryJpql = "SELECT dep FROM Department dep";
+
+		// when
+		// create new department in first transaction
+		EntityTransaction departmentTransaction = entityManager.getTransaction();
+		departmentTransaction.begin();
+		newDepartment.setName("Fabryka Azbestu Sp. z o. o.");
+		entityManager.persist(newDepartment);
+		departmentTransaction.commit();
+		// create a new query in another transaction...
+		EntityTransaction updateDepNameTransaction = entityManager.getTransaction();
+		updateDepNameTransaction.begin();
+		Department foundDepartment = entityManager.createQuery(findDepartmentQueryJpql, Department.class)
+			.getSingleResult();
+		// ... And update the name of the department
+		foundDepartment.setName("Fabryka Bezglutenowego Azbestu Sp. z o. o.");
+		updateDepNameTransaction.commit();
+
+		// then
+		Department updatedDepartment = entityManager.createQuery(findDepartmentQueryJpql, Department.class)
+			.getSingleResult();
+		assertThat(updatedDepartment.getName()).isEqualTo("Fabryka Bezglutenowego Azbestu Sp. z o. o.");
+	}
+
+	/**
+	 * @see <a href="https://vladmihalcea.files.wordpress.com/2014/07/jpaentitystates.png">See how JPA manages
+	 * transition states</a>
+	 */
+	@DisplayName("create new department and persist it, next create another department with the same id but " +
+		"different properties, and merge this new department and finally assert that original department is "
+		+ "updated")
+	@Test
+	void mergeCase() {
+		// given
+		EntityManager entityManager = factory.createEntityManager();
+		// original department
+		Department originalDepartment = new Department();
+		originalDepartment.setName("Original department");
+		String findDepartmentQueryJpql = "SELECT dep FROM Department dep";
+
+		// when
+		// persist the original department (transient)
+		EntityTransaction persistTransaction = entityManager.getTransaction();
+		persistTransaction.begin();
+		entityManager.persist(originalDepartment);
+		persistTransaction.commit();
+		// create the new department (detached)
+		Department newDepartment = new Department();
+		newDepartment.setName("New department");
+		// must have the same id as original department - the id should be set by previous persist call
+		newDepartment.setId(originalDepartment.getId());
+		EntityTransaction mergeTransaction = entityManager.getTransaction();
+		mergeTransaction.begin();
+		entityManager.merge(newDepartment);
+		mergeTransaction.commit();
+
+		// then
+		Department updatedDepartment = entityManager.createQuery(findDepartmentQueryJpql, Department.class)
+			.getSingleResult();
+		assertThat(updatedDepartment.getName()).isEqualTo("New department");
+	}
+
 	@DisplayName("should save department with two employees")
 	@Test
-	void department() {
+	void saveDepartment() {
 		// given
 		EntityManager entityManager = factory.createEntityManager();
 		Employee goobar = employeeWithName("goobar");
