@@ -5,7 +5,6 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Filters;
 import de.flapdoodle.embed.mongo.MongodExecutable;
 import de.flapdoodle.embed.mongo.MongodStarter;
 import de.flapdoodle.embed.mongo.config.IMongodConfig;
@@ -23,6 +22,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
+import static com.mongodb.client.model.Filters.eq;
 import static org.assertj.core.api.Assertions.*;
 
 public class MongoDbIntegraionTest {
@@ -34,7 +34,11 @@ public class MongoDbIntegraionTest {
 	@BeforeEach
 	void beforeEach() throws Exception {
 		startEmbeddedMongoServer();
-		mongoClient = MongoClients.create(configureCodecSettings());
+		mongoClient = MongoClients.create(settings());
+	}
+
+	private MongoClientSettings settings() {
+		return codecSettings();
 	}
 
 	/**
@@ -44,7 +48,7 @@ public class MongoDbIntegraionTest {
 	 * according to the documentation
 	 * </a>
 	 */
-	private MongoClientSettings configureCodecSettings() {
+	private MongoClientSettings codecSettings() {
 		return MongoClientSettings.builder().codecRegistry(CodecRegistries.fromRegistries(com.mongodb
 			.MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider
 			.builder().automatic(true).build()))).build();
@@ -85,7 +89,7 @@ public class MongoDbIntegraionTest {
 		collection.insertOne(movieDoc);
 
 		// then
-		Movie foundMovie = collection.find(Filters.eq("title", "title of the movie"), Movie.class).first();
+		Movie foundMovie = collection.find(eq("title", "title of the movie"), Movie.class).first();
 		assertThat(foundMovie.getTitle()).isEqualTo("title of the movie");
 	}
 }
