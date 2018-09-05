@@ -18,9 +18,15 @@
 		<log4j.version>2.11.1</log4j.version>
 		<mongo.version>3.8.1</mongo.version>
 		<embed-mongo.version>2.1.1</embed-mongo.version>
+		<jaxb.version>2.3.0</jaxb.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>${jaxb.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>de.flapdoodle.embed</groupId>
 			<artifactId>de.flapdoodle.embed.mongo</artifactId>
