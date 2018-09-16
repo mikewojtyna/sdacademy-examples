@@ -59,7 +59,7 @@ class JdbcIntegrationTest {
 				// end the transaction - always
 				connection.setAutoCommit(true);
 			}
-			// collect the commited names
+			// collect the committed names
 			ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM Employee");
 			while (resultSet.next()) {
 				String name = resultSet.getString("name");
