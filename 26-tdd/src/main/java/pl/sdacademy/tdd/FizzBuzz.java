@@ -10,8 +10,17 @@ class FizzBuzz {
 	 * @return the string according to the specification
 	 */
 	static String msg(int number) {
-		// TODO: implement according to javadoc specification following TDD principles
-		throw new UnsupportedOperationException("TODO: implement according to javadoc specification following"
-			+ " TDD principles");
+		boolean divisibleBy5 = number % 5 == 0;
+		boolean divisibleBy3 = number % 3 == 0;
+		if (divisibleBy3 && divisibleBy5) {
+			return "FizzBuzz";
+		}
+		if (divisibleBy3) {
+			return "Fizz";
+		}
+		if (divisibleBy5) {
+			return "Buzz";
+		}
+		return String.valueOf(number);
 	}
 }
