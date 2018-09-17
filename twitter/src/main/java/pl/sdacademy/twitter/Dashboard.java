@@ -6,19 +6,19 @@ import java.util.stream.Stream;
 
 public class Dashboard {
 
-	private Collection<Twit> twits;
+	private Collection<Tweet> tweets;
 
 	public Dashboard() {
-		twits = new ArrayList<>();
+		tweets = new ArrayList<>();
 	}
 
-	public Twit create(String msg, String author) {
-		Twit newTwit = new Twit(msg, author);
-		twits.add(newTwit);
-		return newTwit;
+	public Tweet create(String msg, String author) {
+		Tweet newTweet = new Tweet(msg, author);
+		tweets.add(newTweet);
+		return newTweet;
 	}
 
-	public Stream<Twit> load() {
-		return twits.stream();
+	public Stream<Tweet> load() {
+		return tweets.stream();
 	}
 }

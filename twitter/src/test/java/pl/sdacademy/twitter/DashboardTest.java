@@ -25,11 +25,11 @@ public class DashboardTest {
 		String author = "goobar";
 
 		// when
-		Twit twit = dashboard.create(msg, author);
+		Tweet tweet = dashboard.create(msg, author);
 
 		// then
-		assertThat(twit.getAuthor()).isEqualTo(author);
-		assertThat(twit.getMessage()).isEqualTo(msg);
+		assertThat(tweet.getAuthor()).isEqualTo(author);
+		assertThat(tweet.getMessage()).isEqualTo(msg);
 	}
 
 	@DisplayName("should load created twit from the dashboard")
@@ -38,12 +38,12 @@ public class DashboardTest {
 		// given
 		String msg = "content";
 		String author = "goobar";
-		Twit twit = dashboard.create(msg, author);
+		Tweet tweet = dashboard.create(msg, author);
 
 		// when
-		Stream<Twit> allTwits = dashboard.load();
+		Stream<Tweet> allTwits = dashboard.load();
 
 		// then
-		assertThat(allTwits).containsOnly(twit);
+		assertThat(allTwits).containsOnly(tweet);
 	}
 }
