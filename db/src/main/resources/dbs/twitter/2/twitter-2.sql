@@ -37,7 +37,7 @@ INSERT INTO tweet (id, message, author_id) VALUES (5, "foobar's tweet 1", 1);
 INSERT INTO tweet (id, message, author_id) VALUES (6, "foobar's tweet 2", 1);
 
 INSERT INTO tag (id, name) VALUES (1, "#goobar");
-INSERT INTO tag (id, name) VALUES (2, "#foobar")
+INSERT INTO tag (id, name) VALUES (2, "#foobar");
 INSERT INTO tag (id, name) VALUES (3, "#java");
 
 -- #goobar tag
