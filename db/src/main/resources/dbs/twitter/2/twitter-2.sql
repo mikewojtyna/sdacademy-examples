@@ -32,9 +32,9 @@ INSERT INTO tweet (id, message, author_id) VALUES (3, "goobar's tweet 2", 1);
 
 -- add foobar and his tweets
 INSERT INTO author (id, username) VALUES (2, "foobar");
-INSERT INTO tweet (id, message, author_id) VALUES (4, "foobar's tweet 0", 1);
-INSERT INTO tweet (id, message, author_id) VALUES (5, "foobar's tweet 1", 1);
-INSERT INTO tweet (id, message, author_id) VALUES (6, "foobar's tweet 2", 1);
+INSERT INTO tweet (id, message, author_id) VALUES (4, "foobar's tweet 0", 2);
+INSERT INTO tweet (id, message, author_id) VALUES (5, "foobar's tweet 1", 2);
+INSERT INTO tweet (id, message, author_id) VALUES (6, "foobar's tweet 2", 2);
 
 INSERT INTO tag (id, name) VALUES (1, "#goobar");
 INSERT INTO tag (id, name) VALUES (2, "#foobar");
