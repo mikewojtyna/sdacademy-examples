@@ -35,10 +35,15 @@ INSERT INTO author (id, username) VALUES (2, "foobar");
 INSERT INTO tweet (id, message, author_id) VALUES (4, "foobar's tweet 0", 2);
 INSERT INTO tweet (id, message, author_id) VALUES (5, "foobar's tweet 1", 2);
 INSERT INTO tweet (id, message, author_id) VALUES (6, "foobar's tweet 2", 2);
+INSERT INTO tweet (id, message, author_id) VALUES (7, "foobar's tweet about sql", 2);
+INSERT INTO tweet (id, message, author_id) VALUES (8, "foobar's tweet about spring", 2);
 
+-- add tags
 INSERT INTO tag (id, name) VALUES (1, "#goobar");
 INSERT INTO tag (id, name) VALUES (2, "#foobar");
 INSERT INTO tag (id, name) VALUES (3, "#java");
+INSERT INTO tag (id, name) VALUES (4, "#sql");
+INSERT INTO tag (id, name) VALUES (5, "#spring");
 
 -- #goobar tag
 INSERT INTO tag_tweet (tag_id, tweet_id) VALUES (1, 1);
@@ -51,7 +56,14 @@ INSERT INTO tag_tweet (tag_id, tweet_id) VALUES (3, 3);
 INSERT INTO tag_tweet (tag_id, tweet_id) VALUES (3, 4);
 INSERT INTO tag_tweet (tag_id, tweet_id) VALUES (3, 5);
 INSERT INTO tag_tweet (tag_id, tweet_id) VALUES (3, 6);
+INSERT INTO tag_tweet (tag_id, tweet_id) VALUES (3, 8);
 -- #foobar tag
 INSERT INTO tag_tweet (tag_id, tweet_id) VALUES (2, 4);
 INSERT INTO tag_tweet (tag_id, tweet_id) VALUES (2, 5);
 INSERT INTO tag_tweet (tag_id, tweet_id) VALUES (2, 6);
+INSERT INTO tag_tweet (tag_id, tweet_id) VALUES (2, 7);
+INSERT INTO tag_tweet (tag_id, tweet_id) VALUES (2, 8);
+-- #sql tag
+INSERT INTO tag_tweet (tag_id, tweet_id) VALUES (4, 7);
+-- #spring tag
+INSERT INTO tag_tweet (tag_id, tweet_id) VALUES (5, 8);
