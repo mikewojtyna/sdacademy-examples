@@ -1,0 +1,1 @@
+CALL find_number_of_tags_used_by_each_author();
