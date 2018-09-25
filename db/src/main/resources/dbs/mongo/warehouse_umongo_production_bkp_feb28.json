@@ -1,0 +1,73 @@
+[
+  {
+    "_id": {
+      "$oid": "5a96e8791bfea118986a910b"
+    },
+    "name": "Harry Potter",
+    "date_of_bith": {
+      "$date": "1992-03-13T02:17:00.000Z"
+    },
+    "loves": [
+      "carrot",
+      "papaya"
+    ],
+    "weight": "60 Kg",
+    "gender": "m",
+    "votes": 63.0
+  },
+  {
+    "_id": {
+      "$oid": "5a96e8791bfea118986a910c"
+    },
+    "name": "Justin Heather",
+    "loves": [
+      "carrot",
+      "grape"
+    ],
+    "weight": "45 Kg",
+    "gender": "m",
+    "votes": 43.0
+  },
+  {
+    "_id": {
+      "$oid": "5a96e8791bfea118986a910d"
+    },
+    "name": "Daniel Atlas",
+    "date_of_bith": {
+      "$date": "1985-07-03T20:31:00.000Z"
+    },
+    "loves": [
+      "apple",
+      "carrot"
+    ],
+    "weight": "57 Kg",
+    "gender": "m",
+    "votes": 99.0
+  },
+  {
+    "_id": {
+      "$oid": "5a96e8791bfea118986a910e"
+    },
+    "name": "Charlotte Neil",
+    "loves": [
+      "apple"
+    ],
+    "weight": "57 Kg",
+    "gender": "f",
+    "votes": 99.0
+  },
+  {
+    "_id": {
+      "$oid": "5a96e8791bfea118986a910f"
+    },
+    "name": "April Summers",
+    "loves": [
+      "strawberry",
+      "lemon"
+    ],
+    "weight": "73 Kg",
+    "gender": "f",
+    "votes": 40.0
+  }
+]
+
