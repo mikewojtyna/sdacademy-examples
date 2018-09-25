@@ -1,0 +1,91 @@
+[
+  {
+    "message": "goobar's tweet 0",
+    "author": "goobar",
+    "tags": [
+      "#goobar",
+      "#java"
+    ],
+    "creationDate": {
+      "$date": "2013-11-20T23:32:18Z"
+    }
+  },
+  {
+    "message": "goobar's tweet 1",
+    "author": "goobar",
+    "tags": [
+      "#goobar",
+      "#java"
+    ],
+    "creationDate": {
+      "$date": "2018-11-20T00:00:00Z"
+    }
+  },
+  {
+    "message": "goobar's tweet 2",
+    "author": "goobar",
+    "tags": [
+      "#goobar",
+      "#java"
+    ],
+    "creationDate": {
+      "$date": "2019-11-20T00:00:00Z"
+    }
+  },
+  {
+    "message": "foobar's tweet 0",
+    "author": "foobar",
+    "tags": [
+      "#foobar",
+      "#java"
+    ],
+    "creationDate": {
+      "$date": "2015-10-13T23:59:59Z"
+    }
+  },
+  {
+    "message": "foobar's tweet 1",
+    "author": "foobar",
+    "tags": [
+      "#foobar",
+      "#java"
+    ],
+    "creationDate": {
+      "$date": "2016-10-13T23:59:59Z"
+    }
+  },
+  {
+    "message": "foobar's tweet 2",
+    "author": "foobar",
+    "tags": [
+      "#foobar",
+      "#java"
+    ],
+    "creationDate": {
+      "$date": "2017-10-13T23:59:59Z"
+    }
+  },
+  {
+    "message": "foobar's tweet about sql",
+    "author": "foobar",
+    "tags": [
+      "#foobar",
+      "#sql"
+    ],
+    "creationDate": {
+      "$date": "2018-10-13T23:59:59Z"
+    }
+  },
+  {
+    "message": "foobar's tweet about spring",
+    "author": "foobar",
+    "tags": [
+      "#foobar",
+      "#java",
+      "#spring"
+    ],
+    "creationDate": {
+      "$date": "2019-10-13T23:59:59Z"
+    }
+  }
+]
