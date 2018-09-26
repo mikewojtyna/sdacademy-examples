@@ -16,7 +16,7 @@ class JdbcHelloWorldIntegrationTest {
 	@DisplayName("show how to connect to h2 using JDBC")
 	@Test
 	void test0() throws Exception {
-		try (Connection connection = DriverManager.getConnection("jdbc:h2:mem:test")) {
+		try (Connection connection = DriverManager.getConnection("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1")) {
 			Statement statement = connection.createStatement();
 			statement.execute("CREATE TABLE test_table(id int primary key)");
 			statement.execute("INSERT INTO test_table(id) VALUES (1)");
