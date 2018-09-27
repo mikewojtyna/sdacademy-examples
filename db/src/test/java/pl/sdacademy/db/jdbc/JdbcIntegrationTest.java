@@ -155,11 +155,7 @@ class JdbcIntegrationTest {
 
 	private void populateUsingScript(Connection connection) throws Exception {
 		String script = IOUtils.toString(getClass().getResourceAsStream("/create.sql"), "UTF-8");
-
-		Statement statement = connection.createStatement();
-		statement.execute(script);
-
-		connection.prepareStatement(script).execute();
+		connection.createStatement().execute(script);
 	}
 
 	private void populateInline(Connection connection) throws SQLException {
