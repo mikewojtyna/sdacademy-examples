@@ -169,7 +169,7 @@ class JdbcIntegrationTest {
 		JdbcDataSource jdbcDataSource = new JdbcDataSource();
 		jdbcDataSource.setUser("sa");
 		jdbcDataSource.setPassword("sa");
-		jdbcDataSource.setURL("jdbc:h2:mem:test");
+		jdbcDataSource.setURL("jdbc:h2:mem:");
 		return jdbcDataSource;
 	}
 }
