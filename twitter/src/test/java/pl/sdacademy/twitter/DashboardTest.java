@@ -17,7 +17,7 @@ public class DashboardTest {
 		dashboard = new Dashboard();
 	}
 
-	@DisplayName("author should be able to create a new twit")
+	@DisplayName("author should be able to create a new tweet")
 	@Test
 	void twitAuthor() {
 		// given
@@ -32,7 +32,7 @@ public class DashboardTest {
 		assertThat(tweet.getMessage()).isEqualTo(msg);
 	}
 
-	@DisplayName("should load created twit from the dashboard")
+	@DisplayName("should load created tweet from the dashboard")
 	@Test
 	void db() {
 		// given
@@ -41,9 +41,9 @@ public class DashboardTest {
 		Tweet tweet = dashboard.create(msg, author);
 
 		// when
-		Stream<Tweet> allTwits = dashboard.load();
+		Stream<Tweet> allTweets = dashboard.load();
 
 		// then
-		assertThat(allTwits).containsOnly(tweet);
+		assertThat(allTweets).containsOnly(tweet);
 	}
 }
