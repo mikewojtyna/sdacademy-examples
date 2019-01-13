@@ -2,6 +2,7 @@ package pl.sdacademy.tdd;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pl.sdacademy.tdd.kata.Question;
 
 import static org.assertj.core.api.Assertions.*;
 

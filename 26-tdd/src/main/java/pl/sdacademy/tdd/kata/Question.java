@@ -1,4 +1,4 @@
-package pl.sdacademy.tdd;
+package pl.sdacademy.tdd.kata;
 
 import java.util.HashSet;
 import java.util.Set;

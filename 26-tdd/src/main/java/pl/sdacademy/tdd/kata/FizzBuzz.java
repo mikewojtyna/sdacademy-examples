@@ -1,6 +1,6 @@
-package pl.sdacademy.tdd;
+package pl.sdacademy.tdd.kata;
 
-class FizzBuzz {
+public class FizzBuzz {
 	/**
 	 * Returns a "Fizz" when {@code number} if divisible by 3, "Buzz" when divisible by 5, "FizzBuzz" when
 	 * divisible by 3 and 5, and finally a string representation of a {@code number} in any other case (e.g. "1"
@@ -9,7 +9,7 @@ class FizzBuzz {
 	 * @param number a number
 	 * @return the string according to the specification
 	 */
-	static String msg(int number) {
+	public static String msg(int number) {
 		boolean divisibleBy5 = number % 5 == 0;
 		boolean divisibleBy3 = number % 3 == 0;
 		if (divisibleBy3 && divisibleBy5) {
