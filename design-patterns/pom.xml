@@ -11,5 +11,15 @@
 
 	<artifactId>design-patterns</artifactId>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.joda</groupId>
+			<artifactId>joda-money</artifactId>
+			<version>${joda-money.version}</version>
+		</dependency>
+	</dependencies>
+	<properties>
+		<joda-money.version>1.0.1</joda-money.version>
+	</properties>
 
 </project>
