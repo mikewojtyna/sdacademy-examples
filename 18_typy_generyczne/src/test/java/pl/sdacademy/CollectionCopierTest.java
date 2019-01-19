@@ -35,6 +35,6 @@ public class CollectionCopierTest {
 		CollectionCopier.copy(integers, numbers);
 
 		// then
-		assertThat(numbers).containsOnly(1, 2, 3);
+		assertThat(numbers).containsOnly(1.0, 2.0, 3.0);
 	}
 }
