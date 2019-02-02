@@ -1,10 +1,10 @@
 package pl.sdacademy.db.jdbc;
 
 import org.apache.commons.io.IOUtils;
-import org.h2.jdbcx.JdbcDataSource;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pl.sdacademy.db.DataSourceFactory;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -115,8 +115,8 @@ class JdbcIntegrationTest {
 	}
 
 	private void populate(Connection connection, String... names) throws Exception {
-		PreparedStatement insertEmployeePreparedStatement = connection.prepareStatement("INSERT INTO Employee"
-			+ "(name) VALUES" + "(?)");
+		PreparedStatement insertEmployeePreparedStatement =
+			connection.prepareStatement("INSERT INTO Employee" + "(name) VALUES(?)");
 		Stream.of(names).forEach(name -> {
 			try {
 				insertEmployeePreparedStatement.setString(1, name);
@@ -129,8 +129,8 @@ class JdbcIntegrationTest {
 	}
 
 	private void createTable(Connection connection) throws SQLException {
-		connection.prepareStatement("CREATE TABLE Employee" + " (emp_id int PRIMARY KEY AUTO_INCREMENT, name "
-			+ "varchar" + "(30))").execute();
+		connection.prepareStatement("CREATE TABLE Employee(emp_id int PRIMARY KEY AUTO_INCREMENT, name " +
+			"varchar" + "(30))").execute();
 	}
 
 	@DisplayName("should run create script and find goobar")
@@ -160,16 +160,11 @@ class JdbcIntegrationTest {
 
 	private void populateInline(Connection connection) throws SQLException {
 		Statement statement = connection.createStatement();
-		statement.execute("CREATE TABLE Employee" + " (emp_id int PRIMARY KEY AUTO_INCREMENT, name " +
-			"varchar" + "(30))");
+		statement.execute("CREATE TABLE Employee (emp_id int PRIMARY KEY AUTO_INCREMENT, name  varchar(30))");
 		statement.execute("INSERT INTO Employee(name) VALUES('goobar')");
 	}
 
 	private DataSource createDataSource() {
-		JdbcDataSource jdbcDataSource = new JdbcDataSource();
-		jdbcDataSource.setUser("sa");
-		jdbcDataSource.setPassword("sa");
-		jdbcDataSource.setURL("jdbc:h2:mem:");
-		return jdbcDataSource;
+		return DataSourceFactory.anonymousH2();
 	}
 }

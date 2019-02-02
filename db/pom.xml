@@ -19,9 +19,16 @@
 		<mongo.version>3.8.1</mongo.version>
 		<embed-mongo.version>2.1.1</embed-mongo.version>
 		<jaxb.version>2.3.0</jaxb.version>
+		<mysql-connector.version>8.0.14</mysql-connector.version>
 	</properties>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql-connector.version}</version>
+		</dependency>
 		<!-- hibernate-jpamodelgen is required to generate metamodel classes used by the criteria query API -->
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-jpamodelgen -->
 		<dependency>
