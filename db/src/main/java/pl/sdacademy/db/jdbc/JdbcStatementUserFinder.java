@@ -7,11 +7,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class JdbcUserFinder implements UserFinder {
+public class JdbcStatementUserFinder implements UserFinder {
 
 	private Connection connection;
 
-	public JdbcUserFinder(Connection connection) {
+	public JdbcStatementUserFinder(Connection connection) {
 		this.connection = connection;
 	}
 

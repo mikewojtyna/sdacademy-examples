@@ -18,7 +18,7 @@ public class UserFinderTest {
 		try (Connection connection = DriverManager.getConnection("jdbc:h2:mem:")) {
 			// given
 			UserPopulator userPopulator = new JdbcUserPopulator(connection);
-			UserFinder userFinder = new JdbcUserFinder(connection);
+			UserFinder userFinder = new JdbcStatementUserFinder(connection);
 			// create some users in the db
 			User goobar = userWithName("goobar");
 			User foobar = userWithName("foobar");
@@ -30,6 +30,52 @@ public class UserFinderTest {
 
 			// then
 			assertThat(users).containsOnly(goobar);
+		}
+	}
+
+	@DisplayName("should allow to execute sql injection using statement user finder")
+	@Test
+	void test1() throws Exception {
+		try (Connection connection = DriverManager.getConnection("jdbc:h2:mem:")) {
+			// given
+			UserPopulator userPopulator = new JdbcUserPopulator(connection);
+			UserFinder userFinder = new JdbcStatementUserFinder(connection);
+			// create some users in the db
+			User goobar = userWithName("goobar");
+			User foobar = userWithName("foobar");
+			User hoobar = userWithName("hoobar");
+			userPopulator.populateDbWith(goobar, foobar, hoobar);
+
+			// when
+			// now, the real SQL looks like this
+			// SELECT * FROM users WHERE firstName = '' OR ''=''
+			Collection<User> users = userFinder.findByName("' OR ''='");
+
+			// then
+			assertThat(users).containsExactlyInAnyOrder(goobar, foobar, hoobar);
+		}
+	}
+
+	@DisplayName("should not allow to execute sql injection using prepared statement user finder")
+	@Test
+	void test2() throws Exception {
+		try (Connection connection = DriverManager.getConnection("jdbc:h2:mem:")) {
+			// given
+			UserPopulator userPopulator = new JdbcUserPopulator(connection);
+			UserFinder userFinder = new JdbcPreparedStatementUserFinder(connection);
+			// create some users in the db
+			User goobar = userWithName("goobar");
+			User foobar = userWithName("foobar");
+			User hoobar = userWithName("hoobar");
+			userPopulator.populateDbWith(goobar, foobar, hoobar);
+
+			// when
+			// because we prepared statements inside the JdbcPreparedStatementUserFinder, we are unable
+			// to execute SQL injection, because name param is EXACTLY equal to ' OR ''='
+			Collection<User> users = userFinder.findByName("' OR ''='");
+
+			// then
+			assertThat(users).isEmpty();
 		}
 	}
 
