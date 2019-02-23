@@ -1,6 +1,7 @@
 package pl.sdacademy.tdd;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -34,5 +35,22 @@ public class StringCalculatorTest {
 		assertThat(sum).isEqualTo(expectedSum);
 	}
 
+	// @formatter:off
+	@DisplayName(
+		"given any negative number, " +
+		"then illegal argument exception is thrown"
+	)
+	// @formatter:on
+	@Test
+	void test1() throws Exception {
+		// given
+		String numbers = "1,-2";
+
+		// when
+		Throwable ex = catchThrowable(() -> StringCalculator.add(numbers));
+
+		// then
+		assertThat(ex).isInstanceOf(IllegalArgumentException.class);
+	}
 
 }

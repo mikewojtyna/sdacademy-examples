@@ -26,7 +26,11 @@ public class StringCalculator {
 	private static int sumNumbers(String[] xNumbers) {
 		int result = 0;
 		for (String x : xNumbers) {
-			result += Integer.parseInt(x);
+			int number = Integer.parseInt(x);
+			if (number < 0) {
+				throw new IllegalArgumentException("Negatives not allowed");
+			}
+			result += number;
 		}
 		return result;
 	}
