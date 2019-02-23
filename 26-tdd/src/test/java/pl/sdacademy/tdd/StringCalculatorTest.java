@@ -18,7 +18,12 @@ public class StringCalculatorTest {
 		"'', 0",
 		"'1', 1",
 		"'5', 5",
-		"'1,2', 3"
+		"'1,2', 3",
+		"'1,2,3', 6",
+		"'1\n2', 3",
+		"'//;\n1;2', 3",
+		"'//%\n1%2%10', 13",
+		"'//%\n1%2,10\n20', 33"
 	})
 	// @formatter:on
 	void test(String numbers, int expectedSum) throws Exception {
@@ -28,5 +33,6 @@ public class StringCalculatorTest {
 		// then
 		assertThat(sum).isEqualTo(expectedSum);
 	}
+
 
 }

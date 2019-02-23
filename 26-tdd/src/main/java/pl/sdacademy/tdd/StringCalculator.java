@@ -5,10 +5,29 @@ public class StringCalculator {
 		if (numbers.isEmpty()) {
 			return 0;
 		}
-		String[] twoNumbers = numbers.split(",");
-		if (twoNumbers.length == 2) {
-			return Integer.parseInt(twoNumbers[0]) + Integer.parseInt(twoNumbers[1]);
+		String[] xNumbers = extractNumbers(numbers);
+		return sumNumbers(xNumbers);
+	}
+
+	private static String[] extractNumbers(final String numbers) {
+		String allDelimiters = ",\n";
+
+		String numbersLocal = numbers;
+
+		if (numbersLocal.startsWith("//")) {
+			char delimiter = numbersLocal.charAt(2);
+			allDelimiters += delimiter;
+			numbersLocal = numbersLocal.substring(4);
 		}
-		return Integer.parseInt(numbers);
+
+		return numbersLocal.split("[" + allDelimiters + "]");
+	}
+
+	private static int sumNumbers(String[] xNumbers) {
+		int result = 0;
+		for (String x : xNumbers) {
+			result += Integer.parseInt(x);
+		}
+		return result;
 	}
 }
