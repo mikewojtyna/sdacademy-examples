@@ -1,4 +1,4 @@
-package pl.sdacademy.tdd;
+package pl.sdacademy.tdd.kata;
 
 public class StringCalculator {
 	public static int add(String numbers) {
