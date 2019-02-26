@@ -29,7 +29,7 @@ class PaintableTable {
 	}
 
 	/**
-	 * Calcualtes how much paint should be used to cover the table.
+	 * Calculates how much paint should be used to cover the table.
 	 *
 	 * @param paint a paint to be used
 	 * @return the number of gallons needed to cover the table
