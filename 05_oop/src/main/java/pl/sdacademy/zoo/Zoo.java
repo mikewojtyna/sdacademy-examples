@@ -6,12 +6,28 @@ import java.util.Collection;
 class Zoo {
 
 	private Collection<Animal> animals;
+	private int maxCapacity;
 
 	Zoo() {
+		maxCapacity = 10;
 		animals = new ArrayList<>();
 	}
 
-	void add(Animal animal) {
+	Zoo(int maxCapacity) {
+		this.maxCapacity = maxCapacity;
+		animals = new ArrayList<>();
+	}
+
+	/**
+	 * Adds a new animal.
+	 *
+	 * @param animal a new animal
+	 * @throws MaximumCapacityExceededException if there's no room
+	 */
+	void add(Animal animal) throws MaximumCapacityExceededException {
+		if (animals.size() == maxCapacity) {
+			throw new MaximumCapacityExceededException("There's no room in this zoo");
+		}
 		animals.add(animal);
 	}
 
