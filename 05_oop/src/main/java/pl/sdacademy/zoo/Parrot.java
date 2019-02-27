@@ -6,8 +6,8 @@ class Parrot extends Animal {
 	}
 
 	@Override
-		// zdefiniowanie jak papuga je
-	void eat() {
+	// zdefiniowanie jak papuga je
+	public void eat() {
 		System.out.println("Parrot eats a cookie");
 	}
 

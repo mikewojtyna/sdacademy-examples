@@ -1,6 +1,6 @@
 package pl.sdacademy.zoo;
 
-abstract class Animal {
+abstract class Animal implements Eater, Greeter {
 
 	private String name;
 
@@ -8,11 +8,9 @@ abstract class Animal {
 		this.name = name;
 	}
 
-	// wszystkie konkretne zwierzeta musza zdefiniowac metode eat (tylko one wiedza, jak maja jesc)
-	abstract void eat();
-
 	// wszystkie zwierzeta maja odziedziczona metode sayHi
-	void sayHi() {
+	@Override
+	public void sayHi() {
 		System.out.println("Hello, my name is " + name);
 	}
 }
