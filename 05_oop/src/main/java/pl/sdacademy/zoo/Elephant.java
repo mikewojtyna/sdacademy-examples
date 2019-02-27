@@ -13,11 +13,11 @@ class Elephant extends Animal {
 	@Override
 	// zdefiniowanie metody abstrakcyjnej przez slonia
 	public void eat() {
-		System.out.println("Elephant eats!");
+		System.out.println("Elephant " + name + " eats!");
 	}
 
 	// metoda, ktora ma tylko slon (i klasy potomne po sloniu)
 	void makeASound() {
-		System.out.println("elephant makes a sound");
+		System.out.println("Elephant " + name + " makes a sound");
 	}
 }

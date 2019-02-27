@@ -2,7 +2,7 @@ package pl.sdacademy.zoo;
 
 abstract class Animal implements Eater, Greeter {
 
-	private String name;
+	protected String name;
 
 	Animal(String name) {
 		this.name = name;

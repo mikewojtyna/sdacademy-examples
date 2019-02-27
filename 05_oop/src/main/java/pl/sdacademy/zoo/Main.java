@@ -4,6 +4,7 @@ class Main {
 	public static void main(String[] args) {
 		// zmien maxCapacity na 1, aby zobaczyc obsluge wyjatkow
 		Zoo zoo = new Zoo(10);
+		Animal elephant = new Elephant();
 		zoo.add(new Elephant("Adam"));
 		try {
 			zoo.add(new Parrot("Polly"));
