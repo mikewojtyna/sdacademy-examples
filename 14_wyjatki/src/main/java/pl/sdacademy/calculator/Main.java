@@ -2,6 +2,7 @@ package pl.sdacademy.calculator;
 
 public class Main {
 	public static void main(String[] args) {
+		// nie musimy lapac wyjatkow IllegalArgumentExcpetion, bo jest to runtime exception
 		System.out.println(Calculator.add(2, 5));
 		// te wywolania rzuca wyjatki
 		try {
