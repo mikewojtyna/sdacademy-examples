@@ -39,7 +39,7 @@ public class SaveUserInput {
 					buffIdx++;
 				}
 				else { //...otherwise, we need to flush the buffer to the file
-					outBufor.flip(); //first we reset its internal pointer to the beginning of
+					outBufor.flip(); //first we reset its inner pointer to the beginning of
 					// the buffer
 					outChannel.write(outBufor); //next, we write buffer contents to filechannel
 					outBufor.clear(); //then, we can safely delete out buffer contents
