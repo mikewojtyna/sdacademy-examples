@@ -3,8 +3,9 @@ package pl.sdacademy.zoo;
 class Main {
 	public static void main(String[] args) {
 		// zmien maxCapacity na 1, aby zobaczyc obsluge wyjatkow
-		Zoo zoo = new Zoo(10);
-		Animal elephant = new Elephant();
+
+		// zmien typ np. na Elephant i zobacz co sie stanie
+		Zoo<Animal> zoo = new Zoo<>(10);
 		zoo.add(new Elephant("Adam"));
 		try {
 			zoo.add(new Parrot("Polly"));

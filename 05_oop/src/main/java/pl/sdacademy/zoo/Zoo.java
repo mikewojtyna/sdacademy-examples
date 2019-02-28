@@ -3,9 +3,9 @@ package pl.sdacademy.zoo;
 import java.util.ArrayList;
 import java.util.Collection;
 
-class Zoo {
+class Zoo<T extends Animal> {
 
-	private Collection<Animal> animals;
+	private Collection<T> animals;
 	private int maxCapacity;
 
 	Zoo() {
@@ -24,7 +24,7 @@ class Zoo {
 	 * @param animal a new animal
 	 * @throws MaximumCapacityExceededException if there's no room
 	 */
-	void add(Animal animal) throws MaximumCapacityExceededException {
+	void add(T animal) throws MaximumCapacityExceededException {
 		if (animals.size() == maxCapacity) {
 			throw new MaximumCapacityExceededException("There's no room in this zoo");
 		}
@@ -32,7 +32,7 @@ class Zoo {
 	}
 
 	void feed() {
-		for (Animal animal : animals) {
+		for (T animal : animals) {
 			// zoo nie musi wiedziec, z jakimi dokladnie zwierzetami ma do czynienia, gdyz maja ten sam
 			// interfejs (kazde zwierze moze jesc)
 			animal.eat();
@@ -40,7 +40,7 @@ class Zoo {
 	}
 
 	void helloAll() {
-		for (Animal anim : animals) {
+		for (T anim : animals) {
 			// kazde zwierze moze sie przywitac
 			anim.sayHi();
 		}
