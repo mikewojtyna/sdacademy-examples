@@ -3,6 +3,7 @@ package pl.sdacademy.io;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.Charset;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
@@ -24,7 +25,8 @@ public class IoExamples {
 	}
 
 	private static void bufferedReaderExample() throws IOException {
-		try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(source()))) {
+		try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(source(),
+			Charset.forName("UTF-8")))) {
 			String line = bufferedReader.readLine();
 			while (line != null) {
 				System.out.println(line);
@@ -34,7 +36,7 @@ public class IoExamples {
 	}
 
 	private static void scannerExample() throws IOException {
-		Scanner scanner = new Scanner(source());
+		Scanner scanner = new Scanner(source(), "UTF-8");
 		scanner.useDelimiter("\n");
 		while (scanner.hasNext()) {
 			String line = scanner.next();
@@ -49,7 +51,7 @@ public class IoExamples {
 	}
 
 	private static InputStream inMemory() {
-		return new ByteArrayInputStream("hello".getBytes());
+		return new ByteArrayInputStream("hello".getBytes(Charset.forName("UTF-8")));
 	}
 
 	private static InputStream openFile() throws FileNotFoundException {
