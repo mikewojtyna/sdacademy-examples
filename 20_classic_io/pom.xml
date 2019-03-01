@@ -11,5 +11,15 @@
 
 	<artifactId>20_classic_io</artifactId>
 
+	<dependencies>
+		<dependency>
+			<groupId>com.mpatric</groupId>
+			<artifactId>mp3agic</artifactId>
+			<version>${mp3agic.version}</version>
+		</dependency>
+	</dependencies>
+	<properties>
+		<mp3agic.version>0.9.1</mp3agic.version>
+	</properties>
 
 </project>
