@@ -15,8 +15,9 @@ public class IoExamples {
 	}
 
 	private static void bufferedWriterExample() throws IOException {
-		try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(Paths.get("files", "targetFile"
-			+ ".txt").toFile()))) {
+		try (BufferedWriter bufferedWriter =
+			     new BufferedWriter(new OutputStreamWriter(new FileOutputStream(Paths.get("files",
+				     "targetFile" + ".txt").toFile()), Charset.forName("UTF-8")))) {
 			bufferedWriter.write("String testowy.");
 			bufferedWriter.newLine();
 			bufferedWriter.write("String testowy 2.");
