@@ -1,17 +1,29 @@
 package pl.sdacademy.io;
 
+import org.apache.commons.io.IOUtils;
+
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Scanner;
 
 public class IoExamples {
 	public static void main(String[] args) throws IOException {
+		// ioUtilsReadAllLinesExample();
 		// scannerExample();
 		bufferedReaderExample();
 		// bufferedWriterExample();
+	}
+
+	private static void ioUtilsReadAllLinesExample() throws IOException {
+		List<String> allLines = IOUtils.readLines(source(), Charset.forName("UTF-8"));
+		System.out.println(allLines);
+
+		String entireFile = IOUtils.toString(source(), Charset.forName("UTF-8"));
+		System.out.println(entireFile);
 	}
 
 	private static void bufferedWriterExample() throws IOException {
