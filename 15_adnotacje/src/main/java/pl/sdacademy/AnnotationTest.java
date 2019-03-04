@@ -13,14 +13,14 @@ public class AnnotationTest {
         Class<User> userObj = User.class;
         //adnotacje klasy
         if(userObj.isAnnotationPresent(MyClassAnnotation.class)) {
-            MyClassAnnotation myClassAnnotation = (MyClassAnnotation) userObj.getAnnotation(MyClassAnnotation.class);
+            MyClassAnnotation myClassAnnotation = userObj.getAnnotation(MyClassAnnotation.class);
             System.out.println("Author of the class " + userObj.getSimpleName() + " is " + myClassAnnotation.author());
         }
 
         //adnotacje metody
         for(Method method : userObj.getDeclaredMethods()) {
             if(method.isAnnotationPresent(MyMethodAnnotation.class)) {
-                MyMethodAnnotation myMethodAnnotation = (MyMethodAnnotation) method.getAnnotation(MyMethodAnnotation.class);
+                MyMethodAnnotation myMethodAnnotation = method.getAnnotation(MyMethodAnnotation.class);
                 System.out.println("Method " + method.getName() + " is depracated: "
                                 + myMethodAnnotation.isDeprecated() + ", in polish it is called: "
                                 + myMethodAnnotation.inPolish());
@@ -33,7 +33,7 @@ public class AnnotationTest {
         //adnotacje pól
         for(Field field : userObj.getDeclaredFields()) {
             if(field.isAnnotationPresent(MyFieldAnnotation.class)) {
-                MyFieldAnnotation myFieldAnnotation = (MyFieldAnnotation) field.getAnnotation(MyFieldAnnotation.class);
+                MyFieldAnnotation myFieldAnnotation = field.getAnnotation(MyFieldAnnotation.class);
                 System.out.println("Field " + field.getName() + " is in database: " + myFieldAnnotation.isInDatabase());
             }
             else {
