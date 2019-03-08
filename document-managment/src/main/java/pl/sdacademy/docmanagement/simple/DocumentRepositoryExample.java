@@ -4,6 +4,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.UUID;
 
+/**
+ * Przykład użycia repozytorium.
+ */
 public class DocumentRepositoryExample {
 	public static void main(String[] args) {
 		Path dbDir = Paths.get("files", "docmanagement", "db");

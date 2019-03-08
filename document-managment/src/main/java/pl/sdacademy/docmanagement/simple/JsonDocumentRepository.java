@@ -8,11 +8,19 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Optional;
 
+/**
+ * Implementacja interfejsu {@link DocumentRepository}, która zapisuje każdy dokument w pojedynczym pliku json.
+ */
 public class JsonDocumentRepository implements DocumentRepository {
 
 	private Path dbDirectory;
 	private ObjectMapper objectMapper;
 
+	/**
+	 * Tworzy repozytorium, które zapisuje pliki json z dokumentami w katalogu {@code dbDirectory}.
+	 *
+	 * @param dbDirectory katalog, gdzie mają być zapisywane pliki z dokumentami
+	 */
 	public JsonDocumentRepository(Path dbDirectory) {
 		this.dbDirectory = dbDirectory;
 		objectMapper = new ObjectMapper();
@@ -29,8 +37,7 @@ public class JsonDocumentRepository implements DocumentRepository {
 			objectMapper.writeValue(documentFile.toFile(), document);
 		}
 		catch (IOException e) {
-			throw new DocumentRepositoryException(String.format("Failed to save document %s to db file %s"
-				, document, documentFile), e);
+			throw new DocumentRepositoryException(String.format("Failed to save document %s to db file %s", document, documentFile), e);
 		}
 	}
 

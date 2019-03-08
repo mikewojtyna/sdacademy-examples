@@ -7,6 +7,10 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * Centralna klasa naszego sytemu - zawiera informacje o tym, czy dokument został już przetworzony przez wszystkie
+ * powiązane wydziały.
+ */
 public class Document {
 	private String id;
 	private Set<Department> associatedDepartments;
@@ -15,6 +19,11 @@ public class Document {
 
 	}
 
+	/**
+	 * Tworzy nowy dokument o podanym id.
+	 *
+	 * @param id id dokumentu
+	 */
 	public Document(String id) {
 		this.id = id;
 		associatedDepartments = new HashSet<>();
@@ -25,18 +34,38 @@ public class Document {
 		return "Document{" + "id='" + id + '\'' + ", associatedDepartments=" + associatedDepartments + '}';
 	}
 
+	/**
+	 * Wymagane przez Jackson. Nie używać ręcznie.
+	 *
+	 * @return
+	 */
 	public Set<Department> getAssociatedDepartments() {
 		return associatedDepartments;
 	}
 
+	/**
+	 * Wymagane przez Jackson. Nie używać ręcznie.
+	 *
+	 * @param associatedDepartments
+	 */
 	private void setAssociatedDepartments(Set<Department> associatedDepartments) {
 		this.associatedDepartments = associatedDepartments;
 	}
 
+	/**
+	 * Zwraca id dokumentu.
+	 *
+	 * @return id dokumentu
+	 */
 	public String getId() {
 		return id;
 	}
 
+	/**
+	 * Wymagane przez Jackson. Nie używać ręcznie.s
+	 *
+	 * @param id
+	 */
 	private void setId(String id) {
 		this.id = id;
 	}
@@ -58,6 +87,11 @@ public class Document {
 		return Objects.hash(id);
 	}
 
+	/**
+	 * Po wywołaniu tej metody wydział {@code department} rozpoczyna pracę nad tym dokumentem.
+	 *
+	 * @param department wydział, który ma rozpocząć pracę nad tym dokumentem
+	 */
 	public void associateWith(Department department) {
 		associatedDepartments.add(department);
 	}

@@ -11,6 +11,16 @@
 
 	<artifactId>document-managment</artifactId>
 
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven-javadoc-plugin.version}</version>
+			</plugin>
+		</plugins>
+	</reporting>
+
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
@@ -18,10 +28,10 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
-
 	</dependencies>
 	<properties>
 		<jackson.version>2.9.8</jackson.version>
+		<maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
 	</properties>
 
 </project>
