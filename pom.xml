@@ -36,6 +36,7 @@
 		<module>db</module>
 		<module>twitter</module>
 		<module>design-patterns</module>
+		<module>document-managment</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
