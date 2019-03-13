@@ -1,4 +1,4 @@
-package pl.sdacademy.designpatterns.bar;
+package pl.sdacademy.designpatterns.factory;
 
 abstract class Drink {
 	abstract protected String name();

@@ -1,4 +1,4 @@
-package pl.sdacademy.designpatterns.bar;
+package pl.sdacademy.designpatterns.factory;
 
 interface Bar {
 	Drink order(MenuItem type);

@@ -1,4 +1,4 @@
-package pl.sdacademy.designpatterns.bar;
+package pl.sdacademy.designpatterns.factory;
 
 enum MenuItem {
 	BEER(3.5), WINE(13.5), MILK(0), TEA(0), COFFEE(0);

@@ -1,4 +1,4 @@
-package pl.sdacademy.designpatterns.bar;
+package pl.sdacademy.designpatterns.factory;
 
 public class MenuItemAlcoholExample {
 	public static void main(String[] args) {
