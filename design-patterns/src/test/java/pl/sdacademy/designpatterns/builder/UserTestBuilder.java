@@ -17,7 +17,7 @@ public class UserTestBuilder {
 		LocalDate date = LocalDate.now();
 
 		// when
-		User user = UserBuilder.start().withName(name).withDateOfBirth(date).build();
+		User user = User.UserBuilder.start().withName(name).withDateOfBirth(date).build();
 
 		// then
 		assertThat(user.getName()).isEqualTo(name);
