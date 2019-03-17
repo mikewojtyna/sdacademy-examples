@@ -12,7 +12,6 @@ import de.flapdoodle.embed.mongo.config.MongodConfigBuilder;
 import de.flapdoodle.embed.mongo.config.Net;
 import de.flapdoodle.embed.mongo.distribution.Version;
 import de.flapdoodle.embed.process.runtime.Network;
-import org.bson.Document;
 import org.bson.codecs.configuration.CodecRegistries;
 import org.bson.codecs.pojo.PojoCodecProvider;
 import org.junit.jupiter.api.AfterEach;
@@ -49,9 +48,7 @@ public class MongoDbIntegraionTest {
 	 * </a>
 	 */
 	private MongoClientSettings codecSettings() {
-		return MongoClientSettings.builder().codecRegistry(CodecRegistries.fromRegistries(com.mongodb
-			.MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider
-			.builder().automatic(true).build()))).build();
+		return MongoClientSettings.builder().codecRegistry(CodecRegistries.fromRegistries(com.mongodb.MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build()))).build();
 	}
 
 	private void startEmbeddedMongoServer() throws Exception {
@@ -59,8 +56,9 @@ public class MongoDbIntegraionTest {
 
 		String bindIp = "localhost";
 		int port = MONGO_SERVER_PORT;
-		IMongodConfig mongodConfig = new MongodConfigBuilder().version(Version.Main.PRODUCTION).net(new Net
-			(bindIp, port, Network.localhostIsIPv6())).build();
+		IMongodConfig mongodConfig =
+			new MongodConfigBuilder().version(Version.Main.PRODUCTION).net(new Net(bindIp, port,
+				Network.localhostIsIPv6())).build();
 
 		mongodExecutable = starter.prepare(mongodConfig);
 		mongodExecutable.start();
@@ -80,13 +78,14 @@ public class MongoDbIntegraionTest {
 	@Test
 	void collection() {
 		// given
-		MongoDatabase database = mongoClient.getDatabase("testDb");
-		Document movieDoc = new Document("title", "title of the movie").append("genres", Arrays.asList
-			("genre0", "genre1"));
+		MongoDatabase database = mongoClient.getDatabase("movieDb");
+		Movie movie = new Movie();
+		movie.setTitle("title of the movie");
+		movie.setGenres(Arrays.asList("genre0", "genre1"));
 
 		// when
-		MongoCollection<Document> collection = database.getCollection("testCollection");
-		collection.insertOne(movieDoc);
+		MongoCollection<Movie> collection = database.getCollection("movie", Movie.class);
+		collection.insertOne(movie);
 
 		// then
 		Movie foundMovie = collection.find(eq("title", "title of the movie"), Movie.class).first();
