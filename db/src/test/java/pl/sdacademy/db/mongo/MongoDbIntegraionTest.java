@@ -88,7 +88,7 @@ public class MongoDbIntegraionTest {
 		collection.insertOne(movie);
 
 		// then
-		Movie foundMovie = collection.find(eq("title", "title of the movie"), Movie.class).first();
+		Movie foundMovie = collection.find(eq("title", "title of the movie")).first();
 		assertThat(foundMovie.getTitle()).isEqualTo("title of the movie");
 	}
 }
