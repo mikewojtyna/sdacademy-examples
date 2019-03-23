@@ -1,13 +1,13 @@
 package pl.sdacademy;
 
-
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import pl.sdacademy.exception.BadEmailException;
 import pl.sdacademy.users.User;
 
 public class Main {
 
-    static Logger logger = Logger.getLogger(Main.class.getName());
+    static Logger logger = LogManager.getLogger(Main.class.getName());
 
     public static void main(String[] args) {
         User user = new User(); //konstruktor bezargumentowy nie rzuca wyjątku - nie musimy więc otaczać go klauzulą try/catch

@@ -1,7 +1,5 @@
 package pl.sdacademy.test;
 
-import org.omg.PortableServer.AdapterActivator;
-
 import java.util.ArrayList;
 import java.util.List;
 

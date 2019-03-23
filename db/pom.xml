@@ -15,7 +15,6 @@
 		<h2.version>1.4.197</h2.version>
 		<hibernate.version>5.3.6.Final</hibernate.version>
 		<commons-io.version>2.6</commons-io.version>
-		<log4j.version>2.11.1</log4j.version>
 		<mongo.version>3.8.1</mongo.version>
 		<embed-mongo.version>2.1.1</embed-mongo.version>
 		<jaxb.version>2.3.0</jaxb.version>
@@ -52,12 +51,6 @@
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
 			<version>${mongo.version}</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>${log4j.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>

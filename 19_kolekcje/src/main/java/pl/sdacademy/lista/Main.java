@@ -1,7 +1,5 @@
 package pl.sdacademy.lista;
 
-import org.apache.log4j.Logger;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -30,8 +28,7 @@ public class Main {
 		List<String> napisy2 = new ArrayList<>();
 		napisy2.add("ma");
 		napisy2.add("kota");
-		System.out.println("Czy wszystkie elementy napisy2 znajdują się w napisy? : " + napisy.containsAll
-                        (napisy2));
+		System.out.println("Czy wszystkie elementy napisy2 znajdują się w napisy? : " + napisy.containsAll(napisy2));
 		List<String> napisy3 = new ArrayList<>();
 		napisy3.add("kota");
 		napisy3.add("ma");
