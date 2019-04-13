@@ -17,8 +17,7 @@ public class SecurityConfig {
 	}
 
 	@Configuration
-	//	@Order(2)
-	public static class FormConfiguration extends WebSecurityConfigurerAdapter {
+	public static class MvcConfiguration extends WebSecurityConfigurerAdapter {
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
 			http.
