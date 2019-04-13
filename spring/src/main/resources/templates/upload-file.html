@@ -5,7 +5,7 @@
     <title>Upload file</title>
 </head>
 <body>
-<form enctype="multipart/form-data" method="post" th:action="@{/files}">
+<form enctype="multipart/form-data" method="post" th:action="@{/mvc/files}">
     Select file: <input name="file" type="file">
     <br/>
     <input type="submit" value="Upload">
@@ -13,9 +13,9 @@
 <div>
     List of all files: <br/>
     <div th:each="file: ${files}">
-        <img th:src="@{/files/{file}(file=${file})}"/>
+        <img th:src="@{/mvc/files/{file}(file=${file})}"/>
         <br/>
-        <a th:href="@{/files/{file}(file=${file})}"
+        <a th:href="@{/mvc/files/{file}(file=${file})}"
            th:text="${file}">Filename</a>
     </div>
 </div>

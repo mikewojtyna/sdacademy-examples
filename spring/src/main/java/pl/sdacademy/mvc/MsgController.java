@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Collection;
 
 @Controller
-@RequestMapping("/msg")
+@RequestMapping("/mvc/msg")
 public class MsgController {
 
 	private MsgRepository msgRepository;
@@ -33,7 +33,7 @@ public class MsgController {
 	@PostMapping
 	public String saveMsg(Msg msg) {
 		msgRepository.save(msg);
-		return "redirect:/msg";
+		return "redirect:/mvc/msg";
 	}
 
 	@GetMapping

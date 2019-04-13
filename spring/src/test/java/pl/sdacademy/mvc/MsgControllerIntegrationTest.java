@@ -21,11 +21,11 @@ public class MsgControllerIntegrationTest {
 	@Autowired
 	private MsgRepository msgRepository;
 
-	@DisplayName("should show msg page with all messages when GET on /msg")
+	@DisplayName("should show msg page with all messages when GET on /mvc/msg")
 	@Test
 	void test() throws Exception {
 		// when
-		mockMvc.perform(get("/msg"))
+		mockMvc.perform(get("/mvc/msg"))
 
 			// then
 			// @formatter:off

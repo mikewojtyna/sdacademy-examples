@@ -19,7 +19,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Controller
-@RequestMapping("/files")
+@RequestMapping("/mvc/files")
 public class FilesController {
 
 	private Path uploadedFilesPath;
@@ -31,7 +31,7 @@ public class FilesController {
 	@PostMapping
 	public String uploadFile(@RequestParam("file") MultipartFile file) {
 		saveFile(file);
-		return "redirect:/files";
+		return "redirect:/mvc/files";
 	}
 
 	@GetMapping
