@@ -1,6 +1,7 @@
 package pl.sdacademy.swing.homework;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -9,8 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.assertj.core.api.Assertions.*;
 
 class ClasspathResourceReaderTest {
 	private ClasspathResourceReader reader;
@@ -22,6 +22,7 @@ class ClasspathResourceReaderTest {
 
 	@DisplayName("should read all lines of a text file inside the classpath")
 	@Test
+	@Disabled(value = "Enable this test to verify your implementation. Simply remove the @Disabled annotation.")
 	void readLines() throws Exception {
 		// given
 		// test file containing 3 lines - "line0", "line1" and "line2"
@@ -37,6 +38,7 @@ class ClasspathResourceReaderTest {
 
 	@DisplayName("should throw exception when read all lines of non-existent file")
 	@Test
+	@Disabled(value = "Enable this test to verify your implementation. Simply remove the @Disabled annotation.")
 	void readLinesException() {
 		// given
 		Path pathToNonExistentFile = Paths.get("path", "to", "non-existent", "file.txt");

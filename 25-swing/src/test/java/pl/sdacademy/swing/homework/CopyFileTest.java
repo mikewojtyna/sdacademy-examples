@@ -1,6 +1,7 @@
 package pl.sdacademy.swing.homework;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -21,6 +22,7 @@ class CopyFileTest {
 
 	@DisplayName("should copy source file to target path")
 	@Test
+	@Disabled(value = "Enable this test to verify your implementation. Simply remove the @Disabled annotation.")
 	void copy() throws Exception {
 		// given
 		String fileContent = "File content";
@@ -37,6 +39,7 @@ class CopyFileTest {
 
 	@DisplayName("should throw NoSuchFileException when source file doesn't exist")
 	@Test
+	@Disabled(value = "Enable this test to verify your implementation. Simply remove the @Disabled annotation.")
 	void copyException() {
 		// given
 		Path nonExistentSourceFilePath = Paths.get("non", "existent", "file", "path.txt");
