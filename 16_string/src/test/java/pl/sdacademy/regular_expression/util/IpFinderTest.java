@@ -1,9 +1,9 @@
 package pl.sdacademy.regular_expression.util;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class IpFinderTest {
 
@@ -18,20 +18,20 @@ public class IpFinderTest {
 
 	private IpFinder ipFinder;
 
-	@Before
+	@BeforeEach
 	//metoda oznaczona adnotacją @Before będzie wywoływana przed każdą metodą oznaczoną adnotacją @Test - każda metoda test otrzyma świeżą wersję obiektu IpFinder. Jest to istotne kiedy testowany obiekt w trakcie testu zmienia swój stan, np. wartości pól
 	public void setUp() throws Exception {
 		ipFinder = new IpFinder();
 	}
 
-	@Test //metody testowe oznaczone są adnotacją @Test. Jeżeli jakakolwiek asercja nie zostanie spełniona, dana metoda będzie oznaczona jako czerwona (=test nie przechodzi)
+	@Test
+	//metody testowe oznaczone są adnotacją @Test. Jeżeli jakakolwiek asercja nie zostanie spełniona, dana metoda
+	// będzie oznaczona jako czerwona (=test nie przechodzi)
 	public void hasIp() throws Exception {
 		assertTrue(ipFinder.hasIp(TEST_TEXT1)); //asercja jest spełniona jeśli metoda hasIp zwróci prawdę dla argumentu TEST_TEXT1
 		assertTrue(ipFinder.hasIp(TEST_TEXT2)); //j.w.
 		assertFalse(ipFinder.hasIp(TEST_BAD_TEXT1));//asercja jest spełniona jeśli metoda hasIp zwróci fałsz dla argumentu TEST_BAD_TEXT1
 		assertFalse(ipFinder.hasIp(TEST_BAD_TEXT2)); //j.w.
-		assertFalse(true);
-
 	}
 
 	@Test

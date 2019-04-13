@@ -1,9 +1,10 @@
 package pl.sdacademy.testhomework;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class VovelsCounterTest {
 
@@ -15,12 +16,13 @@ public class VovelsCounterTest {
 	private static final int text3Vovels = 2;
 	private VovelsCounter vovelsCounter;
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		vovelsCounter = new VovelsCounter();
 	}
 
 	@Test
+	@Disabled("Remove @Disabled to test your implementation")
 	public void count() {
 		assertEquals(text1Vovels, vovelsCounter.count(text1));
 		assertEquals(text2Vovels, vovelsCounter.count(text2));
