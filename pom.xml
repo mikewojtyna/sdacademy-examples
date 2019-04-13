@@ -37,6 +37,7 @@
 		<module>twitter</module>
 		<module>design-patterns</module>
 		<module>document-managment</module>
+		<module>spring</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
@@ -120,6 +121,12 @@
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava-testlib</artifactId>
 			<version>${guava-testlib.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>junit</groupId>
+					<artifactId>junit</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>
