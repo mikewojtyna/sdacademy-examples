@@ -19,9 +19,15 @@
 		<embed-mongo.version>2.1.1</embed-mongo.version>
 		<jaxb.version>2.3.0</jaxb.version>
 		<mysql-connector.version>8.0.14</mysql-connector.version>
+		<lombok.version>1.18.12</lombok.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
