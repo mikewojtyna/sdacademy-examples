@@ -29,6 +29,25 @@ public class JdbcAccountManager implements AccountManager {
 		}
 	}
 
+	@Override
+	public Collection<Account> allAccounts() {
+		try (Connection connection = dataSource.getConnection()) {
+			Statement statement = connection.createStatement();
+			ResultSet resultSet = statement.executeQuery("SELECT * FROM accounts");
+			ArrayList<Account> allAccounts = new ArrayList<>();
+			while (resultSet.next()) {
+				String accountNumber = resultSet.getString("accountNumber");
+				double amountOfMoney = resultSet.getDouble("amountOfMoney");
+				Account account = new Account(accountNumber, amountOfMoney);
+				allAccounts.add(account);
+			}
+			return allAccounts;
+		}
+		catch (SQLException e) {
+			throw new AccountManagerException("Failed to find all accounts.", e);
+		}
+	}
+
 	private void setAmountOfMoney(Connection connection, String accountNumber, double newAmount) throws SQLException {
 		PreparedStatement transferStatement = connection.prepareStatement(
 			// @formatter:off
@@ -50,25 +69,6 @@ public class JdbcAccountManager implements AccountManager {
 		ResultSet amountQueryResultSet = amountQuery.executeQuery();
 		amountQueryResultSet.next();
 		return amountQueryResultSet.getDouble(1);
-	}
-
-	@Override
-	public Collection<Account> allAccounts() {
-		try (Connection connection = dataSource.getConnection()) {
-			Statement statement = connection.createStatement();
-			ResultSet resultSet = statement.executeQuery("SELECT * FROM accounts");
-			ArrayList<Account> allAccounts = new ArrayList<>();
-			while (resultSet.next()) {
-				String accountNumber = resultSet.getString("accountNumber");
-				double amountOfMoney = resultSet.getDouble("amountOfMoney");
-				Account account = new Account(accountNumber, amountOfMoney);
-				allAccounts.add(account);
-			}
-			return allAccounts;
-		}
-		catch (SQLException e) {
-			throw new AccountManagerException("Failed to find all accounts.", e);
-		}
 	}
 
 	private void runInTransaction(Connection connection, ThrowingRunnable runnable) {
