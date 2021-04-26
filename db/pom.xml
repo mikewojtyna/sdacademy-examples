@@ -14,7 +14,7 @@
 	<properties>
 		<h2.version>1.4.197</h2.version>
 		<hibernate.version>5.3.6.Final</hibernate.version>
-		<commons-io.version>2.6</commons-io.version>
+		<commons-io.version>2.7</commons-io.version>
 		<mongo.version>3.8.1</mongo.version>
 		<embed-mongo.version>2.1.1</embed-mongo.version>
 		<jaxb.version>2.3.0</jaxb.version>
